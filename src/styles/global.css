@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal?styles=158867,158868,158869,158870,158866');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -119,5 +121,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'PP Neue Montreal', sans-serif;                           
   }
 }
