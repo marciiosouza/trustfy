@@ -3,7 +3,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Navbar } from "@/layout/navbar";
 
 const RootLayout = () => (
-  <div className="bg-zinc-950">
+  <div className="bg-zinc-950 min-h-screen text-zinc-400">
     <Navbar />
     <Outlet />
     <TanStackRouterDevtools />
