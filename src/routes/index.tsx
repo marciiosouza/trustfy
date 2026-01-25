@@ -1,4 +1,4 @@
-import { PaymentsPage } from "@/pages/payments/PaymentsPage";
+import { TechPage } from "@/pages/tech";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <PaymentsPage />
+      <TechPage />
     </>
   );
 }
