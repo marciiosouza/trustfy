@@ -6,59 +6,71 @@ interface TechFeatureGridProps {
 }
 
 export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
-  // Primeira linha: 2 cards (spread + marca)
-  const firstRow = features.slice(0, 2);
-  // Segunda linha: 1 card wide (performance)
-  const wideCard = features[2];
-  // Terceira linha: 2 cards (pix + compliance)
-  const lastRow = features.slice(3, 5);
-
   return (
     <div className="flex flex-col gap-5 mb-16 md:mb-20">
-      {/* Primeira linha: 2 cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.42fr] gap-5">
-        {firstRow.map((feature) => (
-          <TechFeatureCard
-            key={feature.id}
-            title={feature.title}
-            description={feature.description}
-            icon={feature.icon}
-            image={feature.image}
-            variant={feature.variant}
-            imagePosition={feature.imagePosition}
-            className={feature.className}
-          />
-        ))}
+      {/* Linha 1: Card grande (60%) + Card pequeno (40%) */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5">
+        <TechFeatureCard
+          key={features[0].id}
+          title={features[0].title}
+          description={features[0].description}
+          icon={features[0].icon}
+          image={features[0].image}
+          variant={features[0].variant}
+          imagePosition={features[0].imagePosition}
+          className={features[0].className}
+          contentClassName="max-w-[510px]"
+        />
+        <TechFeatureCard
+          key={features[1].id}
+          title={features[1].title}
+          description={features[1].description}
+          icon={features[1].icon}
+          image={features[1].image}
+          variant={features[1].variant}
+          imagePosition={features[1].imagePosition}
+          className={features[1].className}
+          contentClassName="max-w-[393px]"
+        />
       </div>
 
-      {/* Segunda linha: card wide */}
-      {wideCard && (
-        <TechFeatureCard
-          key={wideCard.id}
-          title={wideCard.title}
-          description={wideCard.description}
-          icon={wideCard.icon}
-          image={wideCard.image}
-          variant="wide"
-          imagePosition={wideCard.imagePosition}
-          className={wideCard.className}
-        />
-      )}
+      {/* Linha 2: Card full-width (Estabilidade) */}
+      <TechFeatureCard
+        key={features[2].id}
+        title={features[2].title}
+        description={features[2].description}
+        icon={features[2].icon}
+        image={features[2].image}
+        variant="large"
+        imagePosition={features[2].imagePosition}
+        className={features[2].className}
+        contentClassName="max-w-[646px]"
+      />
 
-      {/* Terceira linha: 2 cards iguais */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {lastRow.map((feature) => (
-          <TechFeatureCard
-            key={feature.id}
-            title={feature.title}
-            description={feature.description}
-            icon={feature.icon}
-            image={feature.image}
-            variant="small"
-            imagePosition={feature.imagePosition}
-            className={feature.className}
-          />
-        ))}
+      {/* Linha 3: Card grande (50%) + Card grande (50%) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <TechFeatureCard
+          key={features[3].id}
+          title={features[3].title}
+          description={features[3].description}
+          icon={features[3].icon}
+          image={features[3].image}
+          variant={features[3].variant}
+          imagePosition={features[3].imagePosition}
+          className={features[3].className}
+          contentClassName="max-w-[568px]"
+        />
+        <TechFeatureCard
+          key={features[4].id}
+          title={features[4].title}
+          description={features[4].description}
+          icon={features[4].icon}
+          image={features[4].image}
+          variant={features[4].variant}
+          imagePosition={features[4].imagePosition}
+          className={features[4].className}
+          contentClassName="max-w-[568px]"
+        />
       </div>
     </div>
   );

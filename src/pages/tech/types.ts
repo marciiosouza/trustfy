@@ -4,9 +4,9 @@ export interface TechFeature {
   id: string;
   title: string;
   description: string;
-  icon?: ReactNode;
+  icon?: ReactNode | string;
   image?: string;
-  variant?: "default" | "wide" | "small";
+  variant?: "large" | "small";
   imagePosition?: "left" | "right";
   className?: string;
 }

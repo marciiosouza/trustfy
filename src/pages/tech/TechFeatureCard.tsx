@@ -4,11 +4,12 @@ import type { ReactNode } from "react";
 interface TechFeatureCardProps {
   title: string;
   description: string;
-  icon?: ReactNode;
+  icon?: ReactNode | string;
   image?: string;
-  variant?: "default" | "wide" | "small";
+  variant?: "large" | "small";
   imagePosition?: "left" | "right";
   className?: string;
+  contentClassName?: string; // Tailwind class for controlling text max-width (e.g., 'max-w-[510px]')
 }
 
 export const TechFeatureCard = ({
@@ -16,67 +17,99 @@ export const TechFeatureCard = ({
   description,
   icon,
   image,
-  variant = "default",
+  variant = "large",
   imagePosition = "right",
   className,
+  contentClassName,
 }: TechFeatureCardProps) => {
-  const isWide = variant === "wide";
-  const isSmall = variant === "small";
+  const isLarge = variant === "large";
+  const isBrandCard = title.includes("Marca 100%");
+  const isPerformanceCard = title.includes("Estabilidade");
 
   return (
     <article
       className={cn(
-        "relative overflow-hidden rounded-[27px]",
-        "bg-gradient-to-b from-transparent to-[rgba(120,97,255,0.4)]",
-        "border-2 border-white/10",
+        "relative overflow-hidden rounded-[24px]",
+        "bg-gradient-to-br from-[#2D1B69] via-[#1a0f3d] to-[#0a0520]",
+        "border border-white/10",
         "transition-all duration-300 hover:border-white/20",
-        isWide
-          ? "col-span-full min-h-[348px]"
-          : isSmall
-            ? "min-h-[348px]"
-            : "min-h-[348px]",
+        "p-6 md:p-8",
+        isLarge ? "min-h-[340px]" : "min-h-[280px]",
         className,
       )}
     >
-      {/* Área da imagem */}
+      {/* Overlay gradient - background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+      {/* Imagem de fundo/preview - acima do gradient */}
       {image && (
-        <div
-          className={cn(
-            "absolute top-0 bottom-0 bg-[#2D2D2D]",
-            isWide &&
-              imagePosition === "left" &&
-              "left-0 w-[44%] rounded-l-[27px]",
-            isWide &&
-              imagePosition === "right" &&
-              "right-0 w-[30%] rounded-r-[27px]",
-            !isWide &&
-              imagePosition === "right" &&
-              "right-0 w-[43%] rounded-r-[27px]",
-            !isWide &&
-              imagePosition === "left" &&
-              "left-0 w-[43%] rounded-l-[27px]",
-          )}
-        >
-          <img src={image} alt="" className="w-full h-full object-cover" />
-        </div>
+        // Performance card uses an <img> positioned to the right and centered vertically
+        isPerformanceCard ? (
+          <img
+            src={image}
+            alt={title}
+            className="absolute right-6 top-1/2 -translate-y-1/2 w-[420px] max-w-[48%] object-contain z-10 pointer-events-none"
+          />
+        ) : !isBrandCard ? (
+          <div
+            className={cn(
+              "absolute bg-no-repeat z-10 inset-0 bg-cover bg-center",
+              imagePosition === "right" ? "bg-right" : "bg-left"
+            )}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ) : null
       )}
 
-      {/* Ícone centralizado (para card de marca) */}
-      {icon && !image && (
-        <div className="absolute top-10 left-1/2 -translate-x-1/2">{icon}</div>
+      {/* Ícone no topo (top-right for normal) */}
+      {icon && !image && !isBrandCard && (
+        <div className="absolute top-6 right-6 text-6xl z-20">
+          {typeof icon === "string" ? icon : icon}
+        </div>
       )}
 
       {/* Conteúdo de texto */}
       <div
         className={cn(
-          "absolute bottom-0 left-0 p-8 md:p-12",
-          isWide ? "max-w-[674px]" : "max-w-full pr-[45%]",
+          isPerformanceCard
+            ? "absolute left-6 bottom-6 md:left-12 md:bottom-12 z-20 text-left"
+            : isBrandCard
+              ? "relative z-10 h-full flex flex-col items-start justify-start pt-8 text-left"
+              : "relative z-10 h-full flex flex-col justify-end"
         )}
       >
-        <h3 className="text-[22px] font-bold text-white mb-4 leading-[0.87] tracking-[-0.015em]">
-          {title}
-        </h3>
-        <p className="text-white/70 text-lg leading-[1.33]">{description}</p>
+        {isBrandCard ? (
+          <div className="flex flex-col items-start">
+            <div className="w-[108px] h-[104px] rounded-lg flex mb-4 mx-auto">
+              {image ? (
+                <img src={image} alt={title} className="w-full h-full object-contain" />
+              ) : icon ? (
+                typeof icon === "string" ? <span className="text-4xl">{icon}</span> : icon
+              ) : null}
+            </div>
+
+            <h3 className="text-xl md:text-2xl font-bold text-white mt-4 leading-tight text-start">
+              {title}
+            </h3>
+            <p className="text-sm md:text-base text-white/60 mt-2 leading-relaxed  max-w-[568px]">
+              {description}
+            </p>
+          </div>
+        ) : (
+          <div className={cn(isPerformanceCard ? "w-full max-w-[646px]" : "")}>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
+              {title}
+            </h3>
+            <p
+              className={cn(
+                "text-sm md:text-base text-white/60 leading-relaxed",
+                isPerformanceCard ? "mt-2 w-full" : (contentClassName ?? "max-w-[568px]")
+              )}
+            >
+              {description}
+            </p>
+          </div>
+        )}
       </div>
     </article>
   );
