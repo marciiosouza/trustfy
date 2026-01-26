@@ -1,13 +1,13 @@
 import { HeroContent } from "./HeroContent";
 import { BrandsStrip } from "./BrandsStrip";
 import { FeatureCard } from "./FeatureCard";
-import { useScale } from "./useScale";
+// import { useScale } from "./useScale";
 
 const DESIGN_WIDTH = 1920;
 const DESIGN_HEIGHT = 1379;
 
 export const HeroPage = () => {
-  const scale = useScale(DESIGN_WIDTH, DESIGN_HEIGHT);
+  // const scale = useScale(DESIGN_WIDTH, DESIGN_HEIGHT);
 
   return (
     <div className="w-full min-h-screen bg-black text-white flex items-center justify-center overflow-hidden">
@@ -16,7 +16,7 @@ export const HeroPage = () => {
           width: DESIGN_WIDTH,
           height: DESIGN_HEIGHT,
           transformOrigin: "center center",
-          transform: `scale(${scale})`,
+          // transform: `scale(${scale})`,
         }}
         className="relative"
       >
