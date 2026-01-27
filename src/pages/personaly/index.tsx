@@ -7,34 +7,14 @@ export const PersonalyPage = () => {
       aria-labelledby="personaly-heading"
     >
       {/* Radial Gradient Background */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(48.78% 48.78% at 52.27% 52.31%, rgba(120, 97, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%)",
-          width: "2033px",
-          height: "992px",
-          maxWidth: "100%",
-        }}
-      />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         {/* Header Badge */}
-        <div className="inline-flex items-center justify-center mb-6">
-          <div
-            className="px-6 py-3 rounded-lg backdrop-blur-sm border"
-            style={{
-              background: "rgba(120, 97, 255, 0.05)",
-              borderColor: "rgba(120, 97, 255, 0.5)",
-            }}
-          >
-            <span
-              className="text-[14px] font-medium uppercase tracking-[-0.28px] text-[#7861FF]"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              PERSONALIZAÇÃO TOTAL
-            </span>
-          </div>
+        <div className="inline-flex items-center justify-center my-8">
+          <Button className="text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
+            Personalização Total{" "}
+          </Button>
         </div>
 
         {/* Main Heading */}
@@ -79,38 +59,41 @@ export const PersonalyPage = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-16">
+        <div className="mt-14">
           <Button
-            className="bg-[#7861FF] text-white rounded-lg py-[20px] px-[78px] h-[60px] w-full max-w-[319px] border border-white/50 font-semibold text-[16px] tracking-[-0.32px]"
+            className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
             style={{
               boxShadow:
                 "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-              fontFamily: "Montserrat, sans-serif",
+              border: "1px solid rgba(255, 255, 255, 0.5)",
             }}
-            aria-label="Fazer orçamento"
           >
-            Fazer orçamento
+            <span
+              className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              Fazer orçamento
+            </span>
+
+            {/* Arrow Icon */}
             <svg
-              className="ml-3 w-6 h-6"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
-              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
             >
               <path
-                d="M5 12h14"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 5l7 7-7 7"
-                stroke="currentColor"
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="white"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
+
+            {/* Border */}
+            <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
           </Button>
         </div>
       </div>

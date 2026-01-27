@@ -3,7 +3,6 @@ import { TechHero } from "./TechHero";
 import { TechFeatureGrid } from "./TechFeatureGrid";
 import { TECH_CONTENT } from "./types";
 import { TECH_FEATURES } from "./constants";
-import { ArrowRight } from "lucide-react";
 
 export const TechPage = () => {
   const handleCTAClick = () => {
@@ -39,17 +38,38 @@ export const TechPage = () => {
 
         <TechFeatureGrid features={TECH_FEATURES} />
 
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           <Button
-            size="lg"
             onClick={handleCTAClick}
             aria-label={TECH_CONTENT.cta.ariaLabel}
-            className="w-[319px] h-[60px] mx-auto bg-[#7861ff] rounded-[8px] border border-[rgba(255,255,255,0.5)] text-white font-semibold text-[16px] leading-[19px] tracking-[-0.32px] flex items-center justify-between px-[30px] shadow-[0_4px_40px_rgba(120,97,255,0.3),_inset_0_4px_24px_rgba(255,255,255,0.3)] hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
-            style={{ fontFamily: "'Montserrat Thin', sans-serif" }}
+            className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
+            style={{
+              boxShadow:
+                "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.5)",
+            }}
           >
-            <span className="mx-auto flex items-center justify-center gap-2">
+            <span
+              className="flex  items-center justify-center gap-2 text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
               {TECH_CONTENT.cta.text}
-              <ArrowRight className="ml-2 w-5 h-5" />
+              {/* Arrow Icon */}
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="transition-transform group-hover:translate-x-1"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
           </Button>
         </div>

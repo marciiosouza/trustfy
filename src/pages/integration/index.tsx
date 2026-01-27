@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export const IntegrationPage = () => {
   return (
     <section className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black">
@@ -19,9 +21,22 @@ export const IntegrationPage = () => {
             }}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect x="-11" width="1238" height="714" fill="url(#paint0_radial_548_105)" fillOpacity="0.5" />
+            <rect
+              x="-11"
+              width="1238"
+              height="714"
+              fill="url(#paint0_radial_548_105)"
+              fillOpacity="0.5"
+            />
             <defs>
-              <radialGradient id="paint0_radial_548_105" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(636.051 373.504) scale(603.908 348.296)">
+              <radialGradient
+                id="paint0_radial_548_105"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(636.051 373.504) scale(603.908 348.296)"
+              >
                 <stop stopColor="#7861FF" stopOpacity="0.3" />
                 <stop offset="1" stopOpacity="0.3" />
               </radialGradient>
@@ -38,29 +53,36 @@ export const IntegrationPage = () => {
           </div>
 
           {/* Right Content - Positioned over image */}
-          <div className="absolute right-16 top-[178px] max-w-[525px] z-10">
+          <div className="absolute right-16 top-[178px] z-10 flex flex-col items-end">
             {/* Heading */}
-            <h2 className="font-bold text-[65px] leading-[64px] text-white text-right mb-8">
+            <h2 className="max-w-139 text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
               Integração sem dor de cabeça
             </h2>
 
             {/* Description */}
-            <p className="font-normal text-[22px] leading-[28px] text-white text-right mb-12">
+            <p
+              className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-right"
+              style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
+            >
               Nossa API foi desenhada para ser intuitiva. Referências claras,
               exemplos de código reais e tudo o que seu time técnico precisa
               para rodar em minutos.
             </p>
 
             {/* CTA Button */}
-            <div className="flex justify-end">
-              <button
-                className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center gap-3 group transition-all hover:shadow-lg hover:shadow-[#7861FF]/30"
+            <div className="flex justify-end ">
+              <Button
+                className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
                 style={{
                   boxShadow:
                     "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  border: "1px solid rgba(255, 255, 255, 0.5)",
                 }}
               >
-                <span className="font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
+                <span
+                  className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
                   Fazer orçamento
                 </span>
 
@@ -83,7 +105,7 @@ export const IntegrationPage = () => {
 
                 {/* Border */}
                 <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
-              </button>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 interface FAQItem {
@@ -70,35 +71,30 @@ export const FaqPage = () => {
   return (
     <section className="relative w-full min-h-[946px] flex items-center justify-center py-20 bg-black">
       <div className="max-w-[1920px] w-full mx-auto px-8">
-        <div className="relative w-full max-w-[1383px] mx-auto">
+        <div className="relative w-full max-w-[1383px] mx-auto text-center">
           {/* Header Badge */}
-          <div className="flex justify-center mb-12">
-            <div
-              className="relative inline-flex items-center justify-center h-10 px-6 rounded-lg backdrop-blur-sm"
-              style={{
-                background: "rgba(120, 97, 255, 0.05)",
-                border: "1px solid rgba(120, 97, 255, 0.5)",
-              }}
-            >
-              <span className="font-medium text-[14px] leading-[14px] tracking-[-0.28px] uppercase text-[#7861FF]">
-                DÚVIDAS GERAIS{" "}
-              </span>
-            </div>
+          <div className="flex justify-center mb-4">
+            <Button className=" w-52 text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
+              Dúvidas Gerais
+            </Button>
           </div>
 
           {/* Main Heading */}
-          <h2 className="font-bold text-[65px] leading-[58px] text-center text-white tracking-[-0.96px] mb-6">
+          <h2 className=" mx-autoflex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
             Perguntas Frequentes
           </h2>
 
           {/* Description */}
-          <p className="font-normal text-[22px] leading-[25px] text-center text-white/70 max-w-[674px] mx-auto mb-16">
+          <p
+            className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-center mx-auto mb-16"
+            style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
+          >
             Confira as respostas para as principais perguntas de quem deseja
             abrir seu próprio Gateway de pagamentos.
           </p>
 
           {/* FAQ Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26">
             {faqData.map((item) => {
               const isOpen = openItems.has(item.id);
               return (
