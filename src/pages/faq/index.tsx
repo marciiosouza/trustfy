@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 
 interface FAQItem {
   id: string;
@@ -103,18 +104,25 @@ export const FaqPage = () => {
             {faqData.map((item) => {
               const isOpen = openItems.has(item.id);
               return (
-                <div
+                <motion.div
                   key={item.id}
-                  className="relative rounded-2xl bg-black transition-all"
+                  layout
+                  className="relative rounded-2xl bg-black"
                   style={{
                     boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
                     border: "1px solid rgba(255, 255, 255, 0.1)",
                     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
                   }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ amount: 0.3, once: true }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  whileHover={{ scale: 1.01 }}
                 >
                   <button
                     onClick={() => toggleItem(item.id)}
                     className="relative w-full p-6 text-left"
+                    aria-expanded={isOpen}
                   >
                     {/* Number Badge */}
                     <div className="flex items-center justify-between mb-4">
@@ -133,12 +141,13 @@ export const FaqPage = () => {
 
                       {/* Plus/Minus Icon */}
                       <div className="flex items-center justify-center w-6 h-6">
-                        <svg
+                        <motion.svg
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className={`transition-transform ${isOpen ? "rotate-45" : ""}`}
+                          animate={{ rotate: isOpen ? 45 : 0 }}
+                          transition={{ duration: 0.2 }}
                         >
                           <path
                             d="M12 5V19M5 12H19"
@@ -147,7 +156,7 @@ export const FaqPage = () => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
-                        </svg>
+                        </motion.svg>
                       </div>
                     </div>
 
@@ -160,15 +169,25 @@ export const FaqPage = () => {
                     </p>
 
                     {/* Answer (when expanded) */}
-                    {isOpen && item.answer && (
-                      <div className="mt-4 pt-4 border-t border-white/10">
+                    {item.answer && (
+                      <motion.div
+                        layout
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={
+                          isOpen
+                            ? { opacity: 1, height: "auto" }
+                            : { opacity: 0, height: 0 }
+                        }
+                        transition={{ duration: 0.28 }}
+                        className="overflow-hidden mt-4 pt-4 border-t border-white/10"
+                      >
                         <p className="font-normal text-[16px] leading-[22px] text-white/70">
                           {item.answer}
                         </p>
-                      </div>
+                      </motion.div>
                     )}
                   </button>
-                </div>
+                </motion.div>
               );
             })}
           </div>

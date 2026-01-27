@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { motion } from "motion/react";
 import { ConnectArcs } from "./ConnectArcs";
 import { PartnerLogo } from "./PartnerLogo";
 import { PARTNERS } from "./constants";
@@ -12,12 +13,24 @@ export const PartnersNetwork = memo(
     return (
       <div className={`relative w-full h-full ${className}`}>
         {/* Background gradient glow */}
-        <div className="absolute inset-0 bg-gradient-radial from-violet-600/20 via-transparent to-transparent opacity-50" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-radial from-violet-600/20 via-transparent to-transparent opacity-50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.5 }}
+          viewport={{}}
+          transition={{ duration: 1 }}
+        />
 
         {/* Arcs container - posicionado no centro */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <ConnectArcs className="w-full h-full max-w-[890px] max-h-[746px]" />
-        </div>
+        </motion.div>
 
         {/* Partner logos */}
         <div className="absolute inset-0">

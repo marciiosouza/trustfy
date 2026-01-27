@@ -1,5 +1,6 @@
 import { BrandsStrip } from "./BrandsStrip";
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 
 export const HeroPage = () => {
   return (
@@ -48,23 +49,41 @@ export const HeroPage = () => {
           </div>
 
           {/* Main Heading */}
-          <div className="absolute w-full left-0 right-0 top-[176px] px-8">
+          <motion.div
+            className="absolute w-full left-0 right-0 top-[176px] px-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h1 className="max-w-[1920px] mx-auto  flex flex-col font-neue-montreal font-normal text-[72px] leading-[67px] text-center tracking-[-1.12px] text-white">
               <span> Deixe de ser cliente,</span>
               <span className="font-bold">Vire dono de Gateway</span>
             </h1>
-          </div>
+          </motion.div>
 
           {/* Description */}
-          <div className="absolute w-[630px] left-1/2 -translate-x-1/2 top-[323px]">
+          <motion.div
+            className="absolute w-[630px] left-1/2 -translate-x-1/2 top-[323px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             <p className="font-neue-montreal font-normal text-[22px] leading-[30px] text-center text-[rgba(255,255,255,0.7)]">
               Nossa tecnologia, sua marca: personalize o sistema, defina suas
               taxas e escale seu negócio com segurança absoluta.
             </p>
-          </div>
+          </motion.div>
 
           {/* CTA Buttons */}
-          <div className="absolute w-[396.44px] h-[60px] left-1/2 -translate-x-1/2 top-[439.41px] flex gap-[24px]">
+          <motion.div
+            className="absolute w-[396.44px] h-[60px] left-1/2 -translate-x-1/2 top-[439.41px] flex gap-[24px]"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          >
             {/* Primary Button */}
             <button
               className="relative w-[210.81px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center px-6 gap-3 group transition-all hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
@@ -95,14 +114,18 @@ export const HeroPage = () => {
               <ArrowRight className="w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
               <div className="absolute inset-0 border border-white/10 rounded-lg pointer-events-none" />
             </button>
-          </div>
+          </motion.div>
 
           {/* Feature Card - Left (Aprovação Rápida) */}
-          <div
+          <motion.div
             className="absolute w-[233px] h-[136.2px] left-[187px] top-[991px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
             style={{
               boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
             }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             {/* Icon */}
             <div className="absolute left-1/2 -translate-x-1/2 top-4 w-12 h-12">
@@ -121,14 +144,18 @@ export const HeroPage = () => {
                 Não fique perdendo vendas.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Feature Card - Right (Personalize) */}
-          <div
+          <motion.div
             className="absolute w-[298px] h-[136.2px] right-[175px] top-[626px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
             style={{
               boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.1)",
             }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
             {/* Icon */}
             <div className="absolute left-4 top-4 w-12 h-12">
@@ -147,7 +174,7 @@ export const HeroPage = () => {
                 Com a cor e identidade da sua marca.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

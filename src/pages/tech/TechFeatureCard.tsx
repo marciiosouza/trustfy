@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 interface TechFeatureCardProps {
@@ -25,7 +26,7 @@ export const TechFeatureCard = ({
   const isPerformanceCard = title.includes("Estabilidade");
 
   return (
-    <article
+    <motion.article
       className={cn(
         "relative overflow-hidden rounded-[27px]",
         "border-2 border-white/10",
@@ -33,6 +34,11 @@ export const TechFeatureCard = ({
         "h-[348px]",
         className,
       )}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ scale: 1.02 }}
     >
       {/* Background gradient */}
       <div
@@ -153,6 +159,6 @@ export const TechFeatureCard = ({
           </div>
         )}
       </div>
-    </article>
+    </motion.article>
   );
 };

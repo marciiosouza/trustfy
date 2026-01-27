@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { motion } from "motion/react";
 import { PartnersNetwork } from "./PartnersNetwork";
 import { ConnectContent } from "./ConnectContent";
 
@@ -11,14 +12,26 @@ export const ConnectHero = memo(({ className = "" }: ConnectHeroProps) => {
     <section className={`relative w-full h-[897px] ${className}`}>
       <div className="relative w-full h-full max-w-[1923px] mx-auto">
         {/* Left side - Partners Network */}
-        <div className="absolute left-[290px] top-[151px] w-[890px] h-[746px]">
+        <motion.div
+          className="absolute left-[290px] top-[151px] w-[890px] h-[746px]"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <PartnersNetwork />
-        </div>
+        </motion.div>
 
         {/* Right side - Content */}
-        <div className="absolute left-[1041px] top-[183px]">
+        <motion.div
+          className="absolute left-[1041px] top-[183px]"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           <ConnectContent />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

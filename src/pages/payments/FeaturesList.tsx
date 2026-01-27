@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { motion } from "motion/react";
 import FeatureItem from "./FeatureItem";
 
 const colorPalette = "/payments/color-palette.png";
@@ -35,10 +36,21 @@ const features = [
 
 const FeaturesList: FC = () => {
   return (
-    <ul
+    <motion.ul
       className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8"
       role="list"
       aria-label="Recursos"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
     >
       {features.map((f) => (
         <FeatureItem
@@ -54,7 +66,7 @@ const FeaturesList: FC = () => {
           }
         />
       ))}
-    </ul>
+    </motion.ul>
   );
 };
 

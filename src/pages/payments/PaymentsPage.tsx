@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 import FeaturesList from "./FeaturesList";
 const payments = "/payments/dollar-payments-onversion.png";
 
@@ -9,7 +10,12 @@ export const PaymentsPage = () => {
       aria-labelledby="payments-heading"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <Button className="text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
             <img
               src={payments}
@@ -63,9 +69,15 @@ export const PaymentsPage = () => {
               </svg>
             </Button>
           </div>
-        </div>
+        </motion.div>
 
-        <aside className="relative">
+        <motion.aside
+          className="relative"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        >
           <figure className="rounded-xl overflow-hidden shadow-2xl">
             <img
               src="/iphone.png"
@@ -73,9 +85,8 @@ export const PaymentsPage = () => {
               className="w-full h-auto object-cover"
             />
           </figure>
-        </aside>
+        </motion.aside>
       </div>
     </section>
   );
 };
-
