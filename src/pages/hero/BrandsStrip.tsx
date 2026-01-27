@@ -50,7 +50,7 @@ export const BrandsStrip = () => {
         }
       `}</style>
       
-      <div className="absolute left-0 top-[1143px] w-full h-[300px] overflow-visible flex items-center justify-center">
+      <div className="absolute left-0 top-[1143px] w-full h-[270px] overflow-visible flex items-center justify-center">
         {/* Primeira faixa diagonal - inclinada para direita (cima esquerda para baixo direita) */}
         <div 
           className="absolute h-[76px] overflow-hidden"
