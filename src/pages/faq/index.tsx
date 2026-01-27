@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 interface FAQItem {
   id: string;
@@ -9,40 +9,46 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    id: '001',
-    number: '001',
-    question: 'A Black Cat é indicada para qual tipo de negócio?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "001",
+    number: "001",
+    question: "A Black Cat é indicada para qual tipo de negócio?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: '002',
-    number: '002',
-    question: 'A Black Cat é indicada para qual tipo de negócio?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "002",
+    number: "002",
+    question: "A Black Cat é indicada para qual tipo de negócio?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: '003',
-    number: '003',
-    question: 'A Black Cat é indicada para qual tipo de negócio?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "003",
+    number: "003",
+    question: "A Black Cat é indicada para qual tipo de negócio?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: '004',
-    number: '004',
-    question: 'A Black Cat é indicada para qual tipo de negócio?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "004",
+    number: "004",
+    question: "A Black Cat é indicada para qual tipo de negócio?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: '005',
-    number: '005',
-    question: 'A Black Cat é indicada para qual tipo de negócio?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "005",
+    number: "005",
+    question: "A Black Cat é indicada para qual tipo de negócio?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: '006',
-    number: '006',
-    question: 'Como posso integrar a plataforma no meu sistema?',
-    answer: 'Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.'
+    id: "006",
+    number: "006",
+    question: "Como posso integrar a plataforma no meu sistema?",
+    answer:
+      "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
 ];
 
@@ -67,11 +73,11 @@ export const FaqPage = () => {
         <div className="relative w-full max-w-[1383px] mx-auto">
           {/* Header Badge */}
           <div className="flex justify-center mb-12">
-            <div 
+            <div
               className="relative inline-flex items-center justify-center h-10 px-6 rounded-lg backdrop-blur-sm"
               style={{
-                background: 'rgba(120, 97, 255, 0.05)',
-                border: '1px solid rgba(120, 97, 255, 0.5)',
+                background: "rgba(120, 97, 255, 0.05)",
+                border: "1px solid rgba(120, 97, 255, 0.5)",
               }}
             >
               <span className="font-medium text-[14px] leading-[14px] tracking-[-0.28px] uppercase text-[#7861FF]">
@@ -83,13 +89,13 @@ export const FaqPage = () => {
           {/* Main Heading */}
           <h2 className="font-bold text-[65px] leading-[58px] text-center text-white tracking-[-0.96px] mb-6">
             Por Que Escolher
-            <br />
-            a GatewayFY?
+            <br />a GatewayFY?
           </h2>
 
           {/* Description */}
           <p className="font-normal text-[22px] leading-[25px] text-center text-white/70 max-w-[674px] mx-auto mb-16">
-            Com nossa solução, você personaliza a experiência de pagamento de acordo com a identidade da sua empresa.
+            Com nossa solução, você personaliza a experiência de pagamento de
+            acordo com a identidade da sua empresa.
           </p>
 
           {/* FAQ Grid */}
@@ -101,9 +107,9 @@ export const FaqPage = () => {
                   key={item.id}
                   className="relative rounded-2xl bg-black transition-all"
                   style={{
-                    boxShadow: 'inset 0px 4px 16px rgba(120, 97, 255, 0.2)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+                    boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
                   }}
                 >
                   <button
@@ -112,11 +118,12 @@ export const FaqPage = () => {
                   >
                     {/* Number Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <div 
+                      <div
                         className="relative inline-flex items-center justify-center h-7 px-4 rounded-full"
                         style={{
-                          background: 'linear-gradient(60.23deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 100%)',
-                          border: '1px solid rgba(120, 97, 255, 0.29)',
+                          background:
+                            "linear-gradient(60.23deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 100%)",
+                          border: "1px solid rgba(120, 97, 255, 0.29)",
                         }}
                       >
                         <span className="font-medium text-[12px] leading-[16px] tracking-[-0.24px] text-[#7861FF]">
@@ -131,7 +138,7 @@ export const FaqPage = () => {
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className={`transition-transform ${isOpen ? 'rotate-45' : ''}`}
+                          className={`transition-transform ${isOpen ? "rotate-45" : ""}`}
                         >
                           <path
                             d="M12 5V19M5 12H19"
@@ -171,8 +178,9 @@ export const FaqPage = () => {
             <button
               className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center gap-3 group transition-all hover:scale-105"
               style={{
-                boxShadow: '0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)',
-                border: '1px solid rgba(255, 255, 255, 0.5)',
+                boxShadow:
+                  "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.5)",
               }}
             >
               <span className="font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
