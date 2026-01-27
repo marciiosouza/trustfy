@@ -68,7 +68,7 @@ export const FaqPage = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[946px] flex items-center justify-center py-20">
+    <section className="relative w-full min-h-[946px] flex items-center justify-center py-20 bg-black">
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1383px] mx-auto">
           {/* Header Badge */}

@@ -1,6 +1,6 @@
 export const IntegrationPage = () => {
   return (
-    <section className="relative w-full min-h-[815px] flex items-center justify-center py-20">
+    <section className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black">
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1315px] mx-auto h-[700px]">
           {/* API Code Image - Main Element */}
