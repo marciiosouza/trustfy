@@ -1,5 +1,6 @@
 import { ConnectPage } from "@/pages/connect";
 import { DepoimentsPage } from "@/pages/depoiments";
+import { FaqPage } from "@/pages/faq";
 import { HeroPage } from "@/pages/hero";
 import { IntegrationPage } from "@/pages/integration";
 import { PaymentsPage } from "@/pages/payments/PaymentsPage";
@@ -21,6 +22,7 @@ function Index() {
       <ConnectPage />
       <PersonalyPage />
       <IntegrationPage />
+      <FaqPage />
     </>
   );
 }
