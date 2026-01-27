@@ -15,7 +15,7 @@ export const IntegrationPage = () => {
      
 
           {/* Right Content - Positioned over image */}
-          <div className="absolute right-0 top-[138px] max-w-[525px] z-10">
+          <div className="absolute right-16 top-[178px] max-w-[525px] z-10">
             {/* Heading */}
             <h2 className="font-bold text-[65px] leading-[64px] text-white text-right mb-8">
               Integrações
