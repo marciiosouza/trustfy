@@ -41,14 +41,13 @@ export const PersonalyPage = () => {
         <header className="mb-8">
           <h2
             id="personaly-heading"
-            className="text-[65px] font-bold leading-[58px] tracking-[-0.96px] text-white mb-6"
-            style={{ fontFamily: "'Neue Montreal', sans-serif" }}
+            className=" mx-auto flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white"
           >
             Design 100% Sob Medida
           </h2>
           <p
-            className="text-[22px] leading-[25px] text-white/70 max-w-[674px] mx-auto"
-            style={{ fontFamily: "'Neue Montreal', sans-serif" }}
+            className="font-normal text-[24px] leading-7.5 mt-4  text-[rgba(255,255,255,0.7)] max-w-[820px] text-center mx-auto"
+            style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
           >
             Tenha liberdade total de edição. Configure cores, logos e layouts
             para que a tecnologia reflita exatamente a identidade do seu
@@ -132,12 +131,24 @@ export const PersonalyPage = () => {
           left: "calc(50% - 2033px/2 - 1.5px)",
           top: "192px",
           zIndex: 0,
-          transform: "translateZ(0)"
+          transform: "translateZ(0)",
         }}
       >
-        <rect x="-58" width="2033" height="992" fill="url(#paint0_radial_548_230)" />
+        <rect
+          x="-58"
+          width="2033"
+          height="992"
+          fill="url(#paint0_radial_548_230)"
+        />
         <defs>
-          <radialGradient id="paint0_radial_548_230" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1004.56 518.93) scale(991.716 483.907)">
+          <radialGradient
+            id="paint0_radial_548_230"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(1004.56 518.93) scale(991.716 483.907)"
+          >
             <stop stopColor="#7861FF" stopOpacity="0.3" />
             <stop offset="1" stopOpacity="0.3" />
           </radialGradient>
