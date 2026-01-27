@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 import { TechHero } from "./TechHero";
 import { TechFeatureGrid } from "./TechFeatureGrid";
 import { TECH_CONTENT } from "./types";
@@ -24,7 +25,13 @@ export const TechPage = () => {
 
         <TechFeatureGrid features={TECH_FEATURES} />
 
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <Button
             size="lg"
             onClick={handleCTAClick}
@@ -34,7 +41,7 @@ export const TechPage = () => {
             {TECH_CONTENT.cta.text}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-        </div>
+        </motion.div>
       </div>
     </main>
   );

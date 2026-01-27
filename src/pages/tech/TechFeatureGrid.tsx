@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { TechFeatureCard } from "./TechFeatureCard";
 import type { TechFeature } from "./types";
 
@@ -7,7 +8,20 @@ interface TechFeatureGridProps {
 
 export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
   return (
-    <div className="flex flex-col gap-5 mb-16 md:mb-20">
+    <motion.div
+      className="flex flex-col gap-5 mb-16 md:mb-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.1 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+    >
       {/* Linha 1: Card grande (60%) + Card pequeno (40%) */}
       <div className="grid grid-cols-1 lg:grid-cols-[1.75fr_0.75fr] gap-5">
         <TechFeatureCard
@@ -72,6 +86,6 @@ export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
           contentClassName="max-w-[568px]"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };

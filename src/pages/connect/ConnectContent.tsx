@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CONNECT_CONTENT } from "./constants";
@@ -14,41 +15,59 @@ export const ConnectContent = memo(
     return (
       <div className={`flex flex-col items-end ${className}`}>
         {/* Heading - position: top 183px */}
-        <h2
+        <motion.h2
           className="w-[592px] font-bold text-[52px] leading-[64px] text-right text-white"
           style={{ fontFamily: "Neue Montreal, sans-serif" }}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {title}
-        </h2>
+        </motion.h2>
 
         {/* Description - position: top 260px (77px abaixo do título) */}
-        <p
+        <motion.p
           className="w-[568px] text-[22px] leading-[28px] text-right text-white mt-[22px]"
           style={{ fontFamily: "Neue Montreal, sans-serif" }}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
         >
           {description}
-        </p>
+        </motion.p>
 
         {/* CTA Button - position: top 383px (123px abaixo da descrição) */}
-        <Button
-          asChild
-          className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[123px]"
-          style={{
-            boxShadow:
-              "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-            border: "1px solid rgba(255, 255, 255, 0.5)",
-          }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
-          <a href={ctaLink} className="flex items-center justify-center gap-3">
-            <span
-              className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
+          <Button
+            asChild
+            className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[123px]"
+            style={{
+              boxShadow:
+                "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.5)",
+            }}
+          >
+            <a
+              href={ctaLink}
+              className="flex items-center justify-center gap-3"
             >
-              {ctaText}
-            </span>
-            <ArrowRight className="w-6 h-6" strokeWidth={1.5} />
-          </a>
-        </Button>
+              <span
+                className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                {ctaText}
+              </span>
+              <ArrowRight className="w-6 h-6" strokeWidth={1.5} />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     );
   },
