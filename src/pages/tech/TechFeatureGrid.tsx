@@ -9,7 +9,7 @@ export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
   return (
     <div className="flex flex-col gap-5 mb-16 md:mb-20">
       {/* Linha 1: Card grande (60%) + Card pequeno (40%) */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.75fr_0.75fr] gap-5">
         <TechFeatureCard
           key={features[0].id}
           title={features[0].title}
@@ -19,7 +19,7 @@ export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
           variant={features[0].variant}
           imagePosition={features[0].imagePosition}
           className={features[0].className}
-          contentClassName="max-w-[510px]"
+          contentClassName="max-w-[710px]"
         />
         <TechFeatureCard
           key={features[1].id}
@@ -30,7 +30,7 @@ export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
           variant={features[1].variant}
           imagePosition={features[1].imagePosition}
           className={features[1].className}
-          contentClassName="max-w-[393px]"
+          contentClassName="max-w-[353px]"
         />
       </div>
 
