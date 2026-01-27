@@ -32,7 +32,7 @@ export const PersonalyPage = () => {
               className="text-[14px] font-medium uppercase tracking-[-0.28px] text-[#7861FF]"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Pagamentos Personalizados
+              PERSONALIZAÇÃO TOTAL
             </span>
           </div>
         </div>
@@ -44,15 +44,15 @@ export const PersonalyPage = () => {
             className="text-[65px] font-bold leading-[58px] tracking-[-0.96px] text-white mb-6"
             style={{ fontFamily: "'Neue Montreal', sans-serif" }}
           >
-            Por Que Escolher
-            <br />a GatewayFY?
+            Design 100% Sob Medida
           </h2>
           <p
             className="text-[22px] leading-[25px] text-white/70 max-w-[674px] mx-auto"
             style={{ fontFamily: "'Neue Montreal', sans-serif" }}
           >
-            Com nossa solução, você personaliza a experiência de pagamento de
-            acordo com a identidade da sua empresa.
+            Tenha liberdade total de edição. Configure cores, logos e layouts
+            para que a tecnologia reflita exatamente a identidade do seu
+            negócio.
           </p>
         </header>
 
@@ -115,6 +115,34 @@ export const PersonalyPage = () => {
           </Button>
         </div>
       </div>
+
+      {/* Bottom SVG radial gradient */}
+      <svg
+        className="absolute pointer-events-none"
+        width="2033"
+        height="992"
+        viewBox="0 0 1920 992"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          width: "2033px",
+          height: "992px",
+          left: "calc(50% - 2033px/2 - 1.5px)",
+          top: "192px",
+          zIndex: 0,
+          transform: "translateZ(0)"
+        }}
+      >
+        <rect x="-58" width="2033" height="992" fill="url(#paint0_radial_548_230)" />
+        <defs>
+          <radialGradient id="paint0_radial_548_230" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1004.56 518.93) scale(991.716 483.907)">
+            <stop stopColor="#7861FF" stopOpacity="0.3" />
+            <stop offset="1" stopOpacity="0.3" />
+          </radialGradient>
+        </defs>
+      </svg>
     </section>
   );
 };

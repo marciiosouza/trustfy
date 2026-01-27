@@ -7,7 +7,7 @@ interface TechFeatureGridProps {
 
 export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
   return (
-    <div className="flex flex-col gap-5 mb-16 md:mb-20">
+    <div className="flex flex-col gap-5 mb-16 md:mb-20 z-3">
       {/* Linha 1: Card grande (60%) + Card pequeno (40%) */}
       <div className="grid grid-cols-1 lg:grid-cols-[1.75fr_0.75fr] gap-5">
         <TechFeatureCard

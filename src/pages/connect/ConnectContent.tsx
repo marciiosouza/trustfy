@@ -15,7 +15,7 @@ export const ConnectContent = memo(
       <div className={`flex flex-col items-end ${className}`}>
         {/* Heading - position: top 183px */}
         <h2
-          className="w-[592px] font-bold text-[52px] leading-[64px] text-right text-white"
+          className="font-bold text-[65px] leading-[64px] text-white text-right"
           style={{ fontFamily: "Neue Montreal, sans-serif" }}
         >
           {title}

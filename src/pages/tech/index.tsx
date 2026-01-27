@@ -13,10 +13,24 @@ export const TechPage = () => {
 
   return (
     <main
-      className="min-h-screen bg-black py-24 md:py-32 px-4 md:px-8"
+      className="min-h-screen bg-black py-24 md:py-32 px-4 md:px-8 relative overflow-hidden"
       id="tech-page"
     >
-      <div className="max-w-[1346px] mx-auto">
+      {/* Background Light Effect */}
+      <div 
+        className="absolute pointer-events-none z-0"
+        style={{
+          width: '1400px',
+          height: '1400px',
+          right: '-970px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          background: 'radial-gradient(circle, rgba(120, 97, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)',
+          filter: 'blur(80px)',
+        }}
+      />
+
+      <div className="max-w-[1346px] mx-auto relative z-10">
         <TechHero
           title={TECH_CONTENT.hero.title}
           description={TECH_CONTENT.hero.description}

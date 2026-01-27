@@ -81,21 +81,20 @@ export const FaqPage = () => {
               }}
             >
               <span className="font-medium text-[14px] leading-[14px] tracking-[-0.28px] uppercase text-[#7861FF]">
-                Pagamentos Personalizados
+                DÚVIDAS GERAIS{" "}
               </span>
             </div>
           </div>
 
           {/* Main Heading */}
           <h2 className="font-bold text-[65px] leading-[58px] text-center text-white tracking-[-0.96px] mb-6">
-            Por Que Escolher
-            <br />a GatewayFY?
+            Perguntas Frequentes
           </h2>
 
           {/* Description */}
           <p className="font-normal text-[22px] leading-[25px] text-center text-white/70 max-w-[674px] mx-auto mb-16">
-            Com nossa solução, você personaliza a experiência de pagamento de
-            acordo com a identidade da sua empresa.
+            Confira as respostas para as principais perguntas de quem deseja
+            abrir seu próprio Gateway de pagamentos.
           </p>
 
           {/* FAQ Grid */}

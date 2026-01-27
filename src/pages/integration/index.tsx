@@ -3,8 +3,33 @@ export const IntegrationPage = () => {
     <section className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black">
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1315px] mx-auto h-[700px]">
+          {/* Background SVG behind image */}
+          <svg
+            className="absolute pointer-events-none z-0"
+            width="1238"
+            height="714"
+            viewBox="0 0 1227 714"
+            fill="none"
+            style={{
+              left: "calc(50% - 1238px/2 - 352px)",
+              top: "0px",
+              position: "absolute",
+              width: "1238px",
+              height: "714px",
+            }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="-11" width="1238" height="714" fill="url(#paint0_radial_548_105)" fillOpacity="0.5" />
+            <defs>
+              <radialGradient id="paint0_radial_548_105" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(636.051 373.504) scale(603.908 348.296)">
+                <stop stopColor="#7861FF" stopOpacity="0.3" />
+                <stop offset="1" stopOpacity="0.3" />
+              </radialGradient>
+            </defs>
+          </svg>
+
           {/* API Code Image - Main Element */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 z-10">
             <img
               src="/api-code-screen.png"
               alt="API Code Example"
@@ -12,13 +37,11 @@ export const IntegrationPage = () => {
             />
           </div>
 
-     
-
           {/* Right Content - Positioned over image */}
           <div className="absolute right-16 top-[178px] max-w-[525px] z-10">
             {/* Heading */}
             <h2 className="font-bold text-[65px] leading-[64px] text-white text-right mb-8">
-              Integrações
+              Integração sem dor de cabeça
             </h2>
 
             {/* Description */}

@@ -1,6 +1,6 @@
 export const DepoimentsPage = () => {
   return (
-    <section className="relative w-full h-[398px] bg-black overflow-hidden">
+    <section className="relative w-full h-[368px] bg-black overflow-hidden">
       {/* Container - Max width 1928px centered */}
       <div className="relative max-w-[1928px] h-full mx-auto">
         {/* Quote Icon - Left */}

@@ -6,7 +6,6 @@ export const ConnectPage = () => {
     <section className="relative w-full bg-black overflow-hidden">
       {/* Main hero section */}
       <ConnectHero />
-
       {/* Bottom Trustfy banner */}
       <TrustfyBanner />
     </section>

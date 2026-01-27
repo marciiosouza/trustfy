@@ -1,9 +1,9 @@
 export const Footer = () => {
   return (
-    <footer className="relative w-full h-[631px] bg-black overflow-hidden">
+    <footer className="relative w-full h-[362px] bg-black overflow-hidden">
       {/* Background Light Effect */}
       <div
-        className="absolute w-[1611.43px] h-[2323.88px] left-1/2 -translate-x-1/2 -top-[272px] pointer-events-none z-0 overflow-hidden"
+        className="absolute w-[1611.43px] h-[2323.88px] left-1/2 -translate-x-1/2 -top-[192px] pointer-events-none z-0 overflow-hidden"
         style={{
           background:
             "radial-gradient(48.78% 48.78% at 52.27% 52.31%, rgba(120, 97, 255, 0.189) 0%, rgba(0, 0, 0, 0.189) 100%)",
@@ -26,34 +26,46 @@ export const Footer = () => {
           {/* Navigation Options */}
           <div className="absolute left-[833px] top-1/2 -translate-y-1/2 w-[527px] h-[188px]">
             {/* Navegue Column */}
-            <div className="absolute left-[calc(50%-133px/2-197px)] top-0 w-[133px] h-[218px]">
+            <div className="absolute left-[calc(50%-133px/2-197px)] top-0 w-[163px] h-[218px]">
               <p className="font-manrope font-medium text-[14px] leading-[22px] tracking-[-0.28px] text-[#848484] mb-[19.4px]">
                 Navegue
               </p>
               <div className="space-y-[11.21px]">
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
                 >
                   Vantagens
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
                 >
                   Tecnologia
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
                 >
                   Personalização
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
                 >
                   Integrações
+                </a>
+                <a
+                  href="#"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                >
+                  Área do Desenvolvedor
+                </a>
+                <a
+                  href="#"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                >
+                 FAQ
                 </a>
               </div>
             </div>
@@ -66,13 +78,13 @@ export const Footer = () => {
               <div className="space-y-[12.21px]">
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
                 >
                   Política de privacidade
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
+                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
                 >
                   Política de segurança
                 </a>
@@ -102,38 +114,20 @@ export const Footer = () => {
                     fill="#7861FF"
                   />
                 </svg>
-                <span className="font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]">
+                <span className="font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]">
                   Instagram
                 </span>
-              </a>
-            </div>
-
-            {/* Additional Links */}
-            <div className="absolute left-[calc(50%+202px-49px)] top-[156px] w-[152px]">
-              <a
-                href="#"
-                className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
-              >
-                Área do Desenvolvedor
-              </a>
-            </div>
-            <div className="absolute left-[calc(50%+202px-49px)] top-[183px] w-[126px]">
-              <a
-                href="#"
-                className="block font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
-              >
-                FAQ
               </a>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="absolute left-0 right-0 top-[187.22px] h-[1px] bg-[rgba(242,242,242,0.1)]" />
+        <div className="absolute left-0 right-0 top-[212.22px] h-[1px] bg-[rgba(242,242,242,0.1)]" />
 
         {/* Copyright */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[228px] w-[600px]">
-          <p className="font-manrope font-semibold text-[14px] leading-[18px] tracking-[-0.28px] text-[#848484] text-center">
+          <p className="font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#848484] text-center">
             © 2025 BlackCat Tecnologia Ltda
           </p>
         </div>
