@@ -12,26 +12,43 @@ export const ConnectContent = memo(
     const { title, description, ctaText, ctaLink } = CONNECT_CONTENT;
 
     return (
-      <div className={`flex flex-col gap-6 ${className}`}>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      <div className={`flex flex-col items-end ${className}`}>
+        {/* Heading - position: top 183px */}
+        <h2
+          className="w-[592px] font-bold text-[52px] leading-[64px] text-right text-white"
+          style={{ fontFamily: "Neue Montreal, sans-serif" }}
+        >
           {title}
         </h2>
 
-        <p className="text-white/60 text-base md:text-lg max-w-md leading-relaxed">
+        {/* Description - position: top 260px (77px abaixo do título) */}
+        <p
+          className="w-[568px] text-[22px] leading-[28px] text-right text-white mt-[22px]"
+          style={{ fontFamily: "Neue Montreal, sans-serif" }}
+        >
           {description}
         </p>
 
-        <div className="mt-2">
-          <Button
-            asChild
-            className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 h-auto rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-violet-600/25"
-          >
-            <a href={ctaLink} className="flex items-center gap-2">
+        {/* CTA Button - position: top 383px (123px abaixo da descrição) */}
+        <Button
+          asChild
+          className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[123px]"
+          style={{
+            boxShadow:
+              "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+            border: "1px solid rgba(255, 255, 255, 0.5)",
+          }}
+        >
+          <a href={ctaLink} className="flex items-center justify-center gap-3">
+            <span
+              className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
               {ctaText}
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </Button>
-        </div>
+            </span>
+            <ArrowRight className="w-6 h-6" strokeWidth={1.5} />
+          </a>
+        </Button>
       </div>
     );
   },

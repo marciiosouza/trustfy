@@ -8,20 +8,16 @@ interface ConnectHeroProps {
 
 export const ConnectHero = memo(({ className = "" }: ConnectHeroProps) => {
   return (
-    <section
-      className={`relative w-full min-h-[600px] lg:min-h-[700px] ${className}`}
-    >
-      <div className="container mx-auto px-4 h-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between h-full gap-8 lg:gap-16 py-12 lg:py-0">
-          {/* Left side - Partners Network */}
-          <div className="relative w-full lg:w-1/2 h-[400px] lg:h-[600px]">
-            <PartnersNetwork />
-          </div>
+    <section className={`relative w-full h-[897px] ${className}`}>
+      <div className="relative w-full h-full max-w-[1923px] mx-auto">
+        {/* Left side - Partners Network */}
+        <div className="absolute left-[290px] top-[151px] w-[890px] h-[746px]">
+          <PartnersNetwork />
+        </div>
 
-          {/* Right side - Content */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start">
-            <ConnectContent />
-          </div>
+        {/* Right side - Content */}
+        <div className="absolute left-[1041px] top-[183px]">
+          <ConnectContent />
         </div>
       </div>
     </section>

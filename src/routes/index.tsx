@@ -17,6 +17,7 @@ function Index() {
       <TechPage />
       <DepoimentsPage />
       <ConnectPage />
+      <DepoimentsPage />
     </>
   );
 }

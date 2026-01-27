@@ -6,20 +6,25 @@ interface PartnerLogoProps {
 }
 
 export const PartnerLogo = memo(({ partner }: PartnerLogoProps) => {
-  const { name, position } = partner;
+  const { name, logo, position, size } = partner;
 
   return (
     <div
-      className="absolute flex items-center justify-center transition-transform duration-300 hover:scale-110"
+      className="absolute transition-transform duration-300 hover:scale-110"
       style={{
         left: `${position.x}%`,
         top: `${position.y}%`,
-        transform: "translate(-50%, -50%)",
       }}
     >
-      <span className="text-white/80 text-sm font-medium whitespace-nowrap tracking-wide">
-        {name}
-      </span>
+      <img
+        src={logo}
+        alt={name}
+        style={{
+          width: `${size.width}px`,
+          height: `${size.height}px`,
+        }}
+        className="object-contain"
+      />
     </div>
   );
 });

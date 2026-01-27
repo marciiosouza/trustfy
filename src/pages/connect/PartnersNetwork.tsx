@@ -14,9 +14,9 @@ export const PartnersNetwork = memo(
         {/* Background gradient glow */}
         <div className="absolute inset-0 bg-gradient-radial from-violet-600/20 via-transparent to-transparent opacity-50" />
 
-        {/* Arcs container */}
-        <div className="absolute inset-0 flex items-end justify-center">
-          <ConnectArcs className="w-full max-w-2xl" />
+        {/* Arcs container - posicionado no centro */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <ConnectArcs className="w-full h-full max-w-[890px] max-h-[746px]" />
         </div>
 
         {/* Partner logos */}
@@ -25,6 +25,61 @@ export const PartnersNetwork = memo(
             <PartnerLogo key={partner.id} partner={partner} />
           ))}
         </div>
+
+        {/* Decorative glowing dots */}
+        <div
+          className="absolute w-[10px] h-[10px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "318px",
+            top: "47px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+          }}
+        />
+        <div
+          className="absolute w-[12px] h-[12px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "661px",
+            top: "197px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+            animationDelay: "0.3s",
+          }}
+        />
+        <div
+          className="absolute w-[10px] h-[10px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "561px",
+            top: "351px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+            animationDelay: "0.6s",
+          }}
+        />
+        <div
+          className="absolute w-[8px] h-[8px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "107px",
+            top: "352px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+            animationDelay: "0.9s",
+          }}
+        />
+        <div
+          className="absolute w-[6px] h-[6px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "464px",
+            top: "122px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+            animationDelay: "1.2s",
+          }}
+        />
+        <div
+          className="absolute w-[6px] h-[6px] bg-[#7861FF] rounded-full animate-pulse"
+          style={{
+            left: "287px",
+            top: "262px",
+            boxShadow: "0px 0px 30px 2px #7861FF",
+            animationDelay: "1.5s",
+          }}
+        />
       </div>
     );
   },

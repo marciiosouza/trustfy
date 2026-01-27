@@ -1,56 +1,84 @@
 import { memo } from "react";
-import type { ArcConfig } from "./types";
 import { ARCS_CONFIG } from "./constants";
-
-interface ArcProps {
-  config: ArcConfig;
-  centerX: number;
-  centerY: number;
-}
-
-const Arc = memo(({ config, centerX, centerY }: ArcProps) => {
-  const { radius, strokeWidth, opacity } = config;
-
-  // Create a semi-circle arc path (top half)
-  const startX = centerX - radius;
-  const startY = centerY;
-  const endX = centerX + radius;
-  const endY = centerY;
-
-  const pathData = `M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`;
-
-  return (
-    <path
-      d={pathData}
-      fill="none"
-      stroke="rgba(139, 92, 246, 1)"
-      strokeWidth={strokeWidth}
-      opacity={opacity}
-      className="transition-opacity duration-300"
-    />
-  );
-});
-
-Arc.displayName = "Arc";
 
 interface ConnectArcsProps {
   className?: string;
 }
 
 export const ConnectArcs = memo(({ className = "" }: ConnectArcsProps) => {
-  const viewBoxWidth = 800;
-  const viewBoxHeight = 400;
-  const centerX = viewBoxWidth / 2;
-  const centerY = viewBoxHeight;
+  const viewBoxWidth = 890;
+  const viewBoxHeight = 746;
+  const centerX = 445;
+  const centerY = 480;
 
   return (
     <svg
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
       className={`w-full h-full ${className}`}
-      preserveAspectRatio="xMidYMax meet"
+      preserveAspectRatio="xMidYMid meet"
     >
+      <defs>
+        <linearGradient
+          id="gradient1"
+          x1="445"
+          y1="306"
+          x2="445"
+          y2="654"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#7861FF" />
+          <stop offset="0.676102" stopOpacity="0" />
+          <stop offset="1" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="gradient2"
+          x1="445"
+          y1="215"
+          x2="445"
+          y2="745"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#7861FF" />
+          <stop offset="0.676102" stopOpacity="0" />
+          <stop offset="1" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="gradient3"
+          x1="445"
+          y1="124"
+          x2="445"
+          y2="836"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#7861FF" />
+          <stop offset="0.676102" stopOpacity="0" />
+          <stop offset="1" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="gradient4"
+          x1="445"
+          y1="35"
+          x2="445"
+          y2="925"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#7861FF" />
+          <stop offset="0.676102" stopOpacity="0" />
+          <stop offset="1" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+
       {ARCS_CONFIG.map((config, index) => (
-        <Arc key={index} config={config} centerX={centerX} centerY={centerY} />
+        <circle
+          key={index}
+          cx={centerX}
+          cy={centerY}
+          r={config.radius}
+          fill="none"
+          stroke={`url(#gradient${index + 1})`}
+          strokeWidth={config.strokeWidth}
+          className="transition-opacity duration-300"
+        />
       ))}
     </svg>
   );
