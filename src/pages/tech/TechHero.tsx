@@ -6,10 +6,13 @@ interface TechHeroProps {
 export const TechHero = ({ title, description }: TechHeroProps) => {
   return (
     <header className="text-center mb-16 md:mb-20">
-      <h1 className="text-white text-[72px] font-bold leading-[0.9333em] tracking-[-1.5555%]">
+      <h1 className=" flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white">
         {title}
       </h1>
-      <p className="text-white/70 text-[22px] max-w-[930px] mt-[18px] mb-[28px] mx-auto font-regular">
+      <p
+        className="font-normal text-[24px] leading-7.5 mt-4 max-w-[1100px] mx-auto text-[rgba(255,255,255,0.7)]"
+        style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
+      >
         {description}
       </p>
     </header>

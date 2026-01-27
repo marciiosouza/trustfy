@@ -74,10 +74,10 @@ export const TechFeatureCard = ({
         className={cn(
           "absolute z-20",
           isPerformanceCard
-            ? "left-[48px] bottom-[48px]"
+            ? "left-[30px] bottom-[48px]"
             : isBrandCard
-              ? "left-[32px] bottom-[48px]"
-              : "left-[48px] bottom-[48px]",
+              ? "left-[30px] bottom-[48px]"
+              : "left-[30px] bottom-[48px]",
         )}
       >
         {isBrandCard ? (
@@ -102,7 +102,7 @@ export const TechFeatureCard = ({
               className="font-bold text-white mb-[19px]"
               style={{
                 fontFamily: "'Neue Montreal', sans-serif",
-                fontSize: "22px",
+                fontSize: "26px",
                 lineHeight: "19px",
                 letterSpacing: "-0.32px",
               }}
@@ -132,7 +132,7 @@ export const TechFeatureCard = ({
               className="font-bold text-white mb-[19px]"
               style={{
                 fontFamily: "'Neue Montreal', sans-serif",
-                fontSize: "22px",
+                fontSize: "26px",
                 lineHeight: "19px",
                 letterSpacing: "-0.32px",
               }}

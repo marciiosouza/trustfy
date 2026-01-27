@@ -7,46 +7,42 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-zinc-950 border-b border-violet-800">
+    <nav className="bg-zinc-950 border-b border-[#7861FF]/70 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-21 items-center justify-between">
           {/* Left: Brand */}
           <div className="flex items-center gap-4">
             <img
               src="/public/logo.svg"
               alt="Trustfy Logo"
-              className="h-8 w-auto"
+              className="h-8.5 w-auto"
             />
           </div>
 
           {/* Center: Nav Links (desktop) */}
           <ul className="hidden md:flex md:flex-1 md:items-center md:justify-center md:space-x-6">
-            <li className="text-sm text-zinc-200 hover:text-violet-800 cursor-pointer">
+            <li className="text-lg text-zinc-200 hover:text-[#7861FF] cursor-pointer">
               Vantagens
             </li>
-            <li className="text-sm text-zinc-200 hover:text-violet-800 cursor-pointer">
+            <li className="text-lg text-zinc-200 hover:text-[#7861FF] cursor-pointer">
               Tecnologia
             </li>
-            <li className="text-sm text-zinc-200 hover:text-violet-800 cursor-pointer">
+            <li className="text-lg text-zinc-200 hover:text-[#7861FF] cursor-pointer">
               Integrações
             </li>
-            <li className="text-sm text-zinc-200 hover:text-violet-800 cursor-pointer">
+            <li className="text-lg text-zinc-200 hover:text-[#7861FF] cursor-pointer">
               API
             </li>
-            <li className="text-sm text-zinc-200 hover:text-violet-800 cursor-pointer">
+            <li className="text-lg text-zinc-200 hover:text-[#7861FF] cursor-pointer">
               FAQ
             </li>
           </ul>
 
           <div className="hidden md:flex md:items-center md:ml-4">
             <Button
-              variant={"outline"}
+              variant="outline"
               size="sm"
-              className={`
-                    w-full bg-violet-950/35 border border-violet-950 
-                    text-violet-800 hover:bg-violet-900/50 hover:text-violet-800 
-                    transition-discrete align-items-center justify-content-center
-                  `}
+              className="flex items-center justify-center bg-[rgba(120,97,255,0.05)] border border-[rgba(120,97,255,0.5)] rounded-[8px] text-[#7861FF] hover:bg-[rgba(120,97,255,0.1)] hover:text-[#7861FF] h-[44.8px] w-[166px] font-bold text-[14px] leading-[17px] tracking-[-0.28px]"
             >
               <img
                 src={whatsapp}
@@ -78,29 +74,25 @@ export const Navbar = () => {
         {/* Mobile menu */}
         {open && (
           <ul className="md:hidden mt-2 space-y-2 pb-4">
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-violet-800">
+            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
               Vantagens
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-violet-800">
+            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
               Tecnologia
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-violet-800">
+            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
               Integrações
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-violet-800">
+            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
               API
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-violet-800">
+            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
               FAQ
             </li>
             <div className="flex items-center gap-2 px-2">
               <Button
                 size="sm"
-                className={`
-                    w-full bg-violet-950/35 border border-violet-950 
-                    text-violet-800 hover:bg-violet-900/50 hover:text-violet-800 
-                    transition-discrete align-items-center justify-content-center
-                  `}
+                className="flex items-center justify-center w-full bg-[rgba(120,97,255,0.05)] border border-[rgba(120,97,255,0.5)] rounded-[8px] text-[#7861FF] h-[44.8px] font-bold text-[14px] leading-[17px] tracking-[-0.28px]"
               >
                 <img
                   src={whatsapp}

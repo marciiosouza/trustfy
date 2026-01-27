@@ -1,5 +1,6 @@
 import { BrandsStrip } from "./BrandsStrip";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const HeroPage = () => {
   return (
@@ -48,16 +49,16 @@ export const HeroPage = () => {
           </div>
 
           {/* Main Heading */}
-          <div className="absolute w-full left-0 right-0 top-[176px] px-8">
-            <h1 className="max-w-[1920px] mx-auto  flex flex-col font-neue-montreal font-normal text-[72px] leading-[67px] text-center tracking-[-1.12px] text-white">
+          <div className="absolute w-full left-0 right-0 top-44 px-8">
+            <h1 className="max-w-480 mx-auto flex flex-col font-neue-montreal font-normal text-[68px] leading-15.5 text-center tracking-[-1.12px] text-white">
               <span> Deixe de ser cliente,</span>
               <span className="font-bold">Vire dono de Gateway</span>
             </h1>
           </div>
 
           {/* Description */}
-          <div className="absolute w-[630px] left-1/2 -translate-x-1/2 top-[323px]">
-            <p className="font-neue-montreal font-normal text-[22px] leading-[30px] text-center text-[rgba(255,255,255,0.7)]">
+          <div className="absolute w-full max-w-170 left-1/2 -translate-x-1/2 top-83">
+            <p className="font-neue-montreal font-normal text-[24px] leading-7.5 text-center text-[rgba(255,255,255,0.7)]">
               Nossa tecnologia, sua marca: personalize o sistema, defina suas
               taxas e escale seu negócio com segurança absoluta.
             </p>
@@ -66,8 +67,8 @@ export const HeroPage = () => {
           {/* CTA Buttons */}
           <div className="absolute w-[396.44px] h-[60px] left-1/2 -translate-x-1/2 top-[439.41px] flex gap-[24px]">
             {/* Primary Button */}
-            <button
-              className="relative w-[210.81px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center px-6 gap-3 group transition-all hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
+            <Button
+              className="relative w-[210.81px] h-15 bg-[#7861FF] rounded-lg flex items-center justify-center px-6 gap-3 group transition-all hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
               style={{
                 boxShadow:
                   "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
@@ -78,28 +79,28 @@ export const HeroPage = () => {
               </span>
               <ArrowRight className="w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
               <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
-            </button>
+            </Button>
 
             {/* Secondary Button */}
-            <button
-              className="relative w-[161.63px] h-[60px] bg-black rounded-lg flex items-center justify-center px-6 gap-2 group transition-all hover:bg-black/80"
+            <Button
+              className="relative w-[161.63px] h-[60px] bg-black rounded-[8px] flex items-center justify-center px-6 gap-2 group transition-all hover:bg-[#0a0a0a]"
               style={{
                 boxShadow:
                   "0px 4px 24px rgba(120, 97, 255, 0.1), inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
                 backdropFilter: "blur(5px)",
               }}
             >
-              <span className="font-montserrat font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
+              <span className="absolute left-6 top-1/2 -translate-y-1/2 font-montserrat font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
                 Saiba mais
               </span>
-              <ArrowRight className="w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 border border-white/10 rounded-lg pointer-events-none" />
-            </button>
+              <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
+              <div className="absolute inset-0 border border-white/10 rounded-[8px] pointer-events-none" />
+            </Button>
           </div>
 
           {/* Feature Card - Left (Aprovação Rápida) */}
           <div
-            className="absolute w-[233px] h-[136.2px] left-[187px] top-[991px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
+            className="absolute text-center w-[272px] h-[136.2px] left-[187px] top-[991px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
             style={{
               boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
             }}
@@ -114,10 +115,17 @@ export const HeroPage = () => {
             </div>
             {/* Content */}
             <div className="absolute left-4 right-4 top-[76px] space-y-1">
-              <h3 className="font-krona-one font-normal text-[16px] leading-[19px] tracking-[-0.32px] text-white text-center">
+              <h3
+                className="font-normal text-[16px] leading-4.75 tracking-[-0.32px] text-white"
+                style={{ fontFamily: "'Krona One', sans-serif" }}
+              >
                 Aprovação Rápida
               </h3>
-              <p className="font-montserrat font-normal text-[14px] leading-[21px] text-center text-white/70">
+              <p
+                className="font-montserrat font-normal text-[16px] leading-5.25 text-white/70"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                {" "}
                 Não fique perdendo vendas.
               </p>
             </div>
@@ -125,7 +133,7 @@ export const HeroPage = () => {
 
           {/* Feature Card - Right (Personalize) */}
           <div
-            className="absolute w-[298px] h-[136.2px] right-[175px] top-[626px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
+            className="absolute w-84.5 h-[136.2px] right-[175px] top-[626px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
             style={{
               boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.1)",
             }}
@@ -139,11 +147,17 @@ export const HeroPage = () => {
               />
             </div>
             {/* Content */}
-            <div className="absolute left-4 right-4 top-[76px] space-y-1">
-              <h3 className="font-krona-one font-normal text-[16px] leading-[19px] tracking-[-0.32px] text-white">
+            <div className="absolute left-4 right-4 top-19 space-y-1">
+              <h3
+                className="font-normal text-[16px] leading-4.75 tracking-[-0.32px] text-white"
+                style={{ fontFamily: "'Krona One', sans-serif" }}
+              >
                 Personalize seu Gateway
               </h3>
-              <p className="font-montserrat font-normal text-[14px] leading-[21px] text-white/70">
+              <p
+                className="font-montserrat font-normal text-[16px] leading-5.25 text-white/70"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
                 Com a cor e identidade da sua marca.
               </p>
             </div>

@@ -4,7 +4,7 @@ export const DepoimentsPage = () => {
       {/* Container - Max width 1928px centered */}
       <div className="relative max-w-[1928px] h-full mx-auto">
         {/* Quote Icon - Left */}
-        <div className="absolute left-[291px] top-[85px] w-[50px] h-[50px]">
+        <div className="absolute left-[292px] top-[35px] w-[50px] h-[50px]">
           <img
             src="/cards/aspas-left.png"
             alt="Opening quote"
@@ -13,8 +13,8 @@ export const DepoimentsPage = () => {
         </div>
 
         {/* Testimonial Text */}
-        <div className="absolute left-[357px] top-[87px] w-[711px] h-[92px]">
-          <p className="font-rubik font-light text-[18px] leading-[32px] text-white flex items-center">
+        <div className="absolute left-[357px] top-[32px] w-[711px] h-[92px]">
+          <p className="font-rubik font-light text-[22px] leading-[32px] text-white flex items-center">
             Procurávamos uma solução, mas encontramos parceiros. A tecnologia da
             Trustfy é excelente, mas o que realmente nos ganhou foi a atenção da
             equipe. Eles entenderam nossa operação a fundo e se dedicaram ao
@@ -23,7 +23,7 @@ export const DepoimentsPage = () => {
         </div>
 
         {/* Quote Icon - Right */}
-        <div className="absolute left-[1084px] top-[159px] w-[50px] h-[50px]">
+        <div className="absolute left-[1084px] top-[112px] w-[50px] h-[50px]">
           <img
             src="/cards/aspas-right.png"
             alt="Closing quote"
@@ -43,7 +43,7 @@ export const DepoimentsPage = () => {
           </div>
 
           {/* Name and Company */}
-          <div className="absolute left-[132px] top-[36px]">
+          <div className="absolute left-[132px] top-[16px]">
             <p className="font-medium text-[20px] leading-[28px] text-white flex items-center w-[157.01px] h-[28px]">
               Nome Completo
             </p>
@@ -54,9 +54,9 @@ export const DepoimentsPage = () => {
         </div>
 
         {/* Heading - Right Side */}
-        <div className="absolute left-[1231px] top-[107px] w-[410px] h-[143px]">
-          <h2 className="font-bold text-[65px] leading-[64px] text-white text-right">
-            Depoimentos
+        <div className="absolute left-[1231px] top-[92px] w-[410px] h-[143px]">
+          <h2 className="max-w-138 text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white">
+            Depoimentos de Clientes
           </h2>
         </div>
       </div>

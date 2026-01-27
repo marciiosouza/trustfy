@@ -1,9 +1,9 @@
 export const Footer = () => {
   return (
-    <footer className="relative w-full h-[362px] bg-black overflow-hidden">
+    <footer className="relative w-full h-82.75 bg-black overflow-hidden">
       {/* Background Light Effect */}
       <div
-        className="absolute w-[1611.43px] h-[2323.88px] left-1/2 -translate-x-1/2 -top-[192px] pointer-events-none z-0 overflow-hidden"
+        className="absolute w-[1611.43px] h-[2323.88px] left-1/2 -translate-x-1/2 -top-48 pointer-events-none z-0 overflow-hidden"
         style={{
           background:
             "radial-gradient(48.78% 48.78% at 52.27% 52.31%, rgba(120, 97, 255, 0.189) 0%, rgba(0, 0, 0, 0.189) 100%)",
@@ -11,11 +11,11 @@ export const Footer = () => {
       />
 
       {/* Content Container */}
-      <div className="absolute left-[280px] right-[280px] top-1/2 -translate-y-1/2 h-[340px]">
+      <div className="absolute left-70 right-70 h-85" style={{ top: 'calc(50% - 340.02px/2 + 44.51px)' }}>
         {/* Main Content Section */}
-        <div className="absolute -top-11 left-0 right-0 h-[206px]">
+        <div className="absolute -top-11 left-0 right-0 h-51.5">
           {/* Logo */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[347.66px] h-[30px]">
+          <div className="absolute left-0 w-[347.66px] h-7.5" style={{ top: 'calc(50% - 30px/2 - 29.39px)' }}>
             <img
               src="/logo.svg"
               alt="Trustify Logo"
@@ -24,46 +24,46 @@ export const Footer = () => {
           </div>
 
           {/* Navigation Options */}
-          <div className="absolute left-[833px] top-1/2 -translate-y-1/2 w-[527px] h-[188px]">
+          <div className="absolute left-208.25 w-131.75 h-47" style={{ top: 'calc(50% - 188px/2 - 9px)' }}>
             {/* Navegue Column */}
-            <div className="absolute left-[calc(50%-133px/2-197px)] top-0 w-[163px] h-[218px]">
-              <p className="font-manrope font-medium text-[14px] leading-[22px] tracking-[-0.28px] text-[#848484] mb-[19.4px]">
+            <div className="absolute left-0 top-0 w-33.25 h-54.5">
+              <p className="absolute left-[-0.41px] top-px font-manrope font-medium text-sm leading-5.5 tracking-[-0.28px] text-[#848484]">
                 Navegue
               </p>
-              <div className="space-y-[11.21px]">
+              <div className="absolute left-[-0.41px] top-[38.4px] w-[133.55px] h-[108.81px] space-y-[11.21px]">
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                   Vantagens
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                   Tecnologia
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                   Personalização
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                   Integrações
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                   Área do Desenvolvedor
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors "
+                  className="block font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] hover:text-[#7861FF] transition-colors"
                 >
                  FAQ
                 </a>
@@ -71,20 +71,20 @@ export const Footer = () => {
             </div>
 
             {/* Transparência Column */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[143.64px] h-[86.81px]">
-              <p className="font-manrope font-medium text-[14px] leading-[22px] tracking-[-0.28px] text-[#848484] mb-[19.4px]">
+            <div className="absolute left-[50%] -translate-x-1/2 top-0 w-[143.64px] h-[86.81px]">
+              <p className="absolute left-0 top-px font-manrope font-medium text-sm leading-5.5 tracking-[-0.28px] text-[#848484]">
                 Transparência
               </p>
-              <div className="space-y-[12.21px]">
+              <div className="absolute left-0 top-[38.4px] w-[143.64px] h-[48.41px]">
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
+                  className="absolute left-[calc(50%-143.95px/2+0.16px)] top-0 w-[143.95px] h-[18.2px] font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors flex items-center justify-center"
                 >
                   Política de privacidade
                 </a>
                 <a
                   href="#"
-                  className="block font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors"
+                  className="absolute left-[calc(50%-137.5px/2-3.07px)] top-[30.21px] w-[137.5px] h-[18.2px] font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] text-center hover:text-[#7861FF] transition-colors flex items-center justify-center"
                 >
                   Política de segurança
                 </a>
@@ -92,17 +92,18 @@ export const Footer = () => {
             </div>
 
             {/* Redes Sociais Column */}
-            <div className="absolute left-[calc(50%+218.39px-45.11px)] top-0 w-[90.22px] h-[56.61px]">
-              <p className="font-manrope font-medium text-[14px] leading-[22px] tracking-[-0.28px] text-[#848484] mb-[19.4px]">
+            <div className="absolute right-0 top-0 w-[90.22px] h-[56.61px]">
+              <p className="absolute left-0 top-px font-manrope font-medium text-sm leading-5.5 tracking-[-0.28px] text-[#848484]">
                 Redes sociais
               </p>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                className="absolute left-0 top-[38.4px] w-[90.22px] h-[18.2px] flex items-center gap-2 hover:opacity-80 transition-opacity"
               >
                 <svg
+                  className="absolute left-0 top-[0.6px] bottom-[0.6px]"
                   width="17"
                   height="17"
                   viewBox="0 0 17 17"
@@ -114,7 +115,7 @@ export const Footer = () => {
                     fill="#7861FF"
                   />
                 </svg>
-                <span className="font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]">
+                <span className="absolute left-[calc(50%-65.52px/2+12.65px)] top-0 w-[65.52px] h-[18.2px] font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#F3F3F3] flex items-center justify-center">
                   Instagram
                 </span>
               </a>
@@ -123,12 +124,12 @@ export const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="absolute left-0 right-0 top-[212.22px] h-[1px] bg-[rgba(242,242,242,0.1)]" />
+        <div className="absolute left-0 right-0 top-[187.22px] h-px bg-[rgba(242,242,242,0.1)]" />
 
         {/* Copyright */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[228px] w-[600px]">
-          <p className="font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.28px] text-[#848484] text-center">
-            © 2025 BlackCat Tecnologia Ltda
+        <div className="absolute left-1/2 -translate-x-1/2 top-57 w-150">
+          <p className="font-manrope font-semibold text-sm leading-4.5 tracking-[-0.28px] text-[#848484] text-center">
+            © 2026 Trystfy | CNPJ: 00.000.000/0000-00
           </p>
         </div>
       </div>

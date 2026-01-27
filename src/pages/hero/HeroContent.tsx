@@ -7,7 +7,7 @@ export const HeroContent = ({
 }) => {
   return (
     <div className="absolute left-0 right-0 top-[176px] text-center">
-      <h1 className="text-white text-[72px] font-regular leading-[0.9333em] tracking-[-1.5555%]">
+      <h1 className="text-white text-[67px] font-regular leading-[0.9333em] tracking-[-1.5555%]">
         Deixe de ser cliente,
         <br />
         <span className="block font-bold">Vire dono de Gateway</span>

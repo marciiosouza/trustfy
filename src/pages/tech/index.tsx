@@ -17,16 +17,17 @@ export const TechPage = () => {
       id="tech-page"
     >
       {/* Background Light Effect */}
-      <div 
+      <div
         className="absolute pointer-events-none z-0"
         style={{
-          width: '1400px',
-          height: '1400px',
-          right: '-970px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          background: 'radial-gradient(circle, rgba(120, 97, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)',
-          filter: 'blur(80px)',
+          width: "1400px",
+          height: "1400px",
+          right: "-970px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          background:
+            "radial-gradient(circle, rgba(120, 97, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)",
+          filter: "blur(80px)",
         }}
       />
 
@@ -43,10 +44,13 @@ export const TechPage = () => {
             size="lg"
             onClick={handleCTAClick}
             aria-label={TECH_CONTENT.cta.ariaLabel}
-            className="bg-[#7861ff] text-white rounded-[8px] py-[18px] px-[30px] h-[60px] w-full max-w-[319px] border border-[rgba(255,255,255,0.5)] font-semibold"
+            className="w-[319px] h-[60px] mx-auto bg-[#7861ff] rounded-[8px] border border-[rgba(255,255,255,0.5)] text-white font-semibold text-[16px] leading-[19px] tracking-[-0.32px] flex items-center justify-between px-[30px] shadow-[0_4px_40px_rgba(120,97,255,0.3),_inset_0_4px_24px_rgba(255,255,255,0.3)] hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
+            style={{ fontFamily: "'Montserrat Thin', sans-serif" }}
           >
-            {TECH_CONTENT.cta.text}
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <span className="mx-auto flex items-center justify-center gap-2">
+              {TECH_CONTENT.cta.text}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </span>
           </Button>
         </div>
       </div>
