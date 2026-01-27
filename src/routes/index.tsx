@@ -2,6 +2,7 @@ import { ConnectPage } from "@/pages/connect";
 import { DepoimentsPage } from "@/pages/depoiments";
 import { HeroPage } from "@/pages/hero";
 import { PaymentsPage } from "@/pages/payments/PaymentsPage";
+import { PersonalyPage } from "@/pages/personaly";
 import { TechPage } from "@/pages/tech";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -12,12 +13,12 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-    <HeroPage />
-    <PaymentsPage />
+      <HeroPage />
+      <PaymentsPage />
       <TechPage />
       <DepoimentsPage />
       <ConnectPage />
-      <DepoimentsPage />
+      <PersonalyPage />
     </>
   );
 }
