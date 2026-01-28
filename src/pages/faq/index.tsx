@@ -124,11 +124,11 @@ export const FaqPage = () => {
             }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26"
           >
-            {faqData.map((item) => {
+            {faqData.map((item, index) => {
               const isOpen = openItems.has(item.id);
               return (
                 <motion.div
-                  key={item.id}
+                  key={item.id ?? index}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
