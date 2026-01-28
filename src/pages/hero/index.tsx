@@ -153,7 +153,7 @@ export const HeroPage = () => {
             {/* Icon */}
             <div className="absolute left-1/2 -translate-x-1/2 top-4 w-12 h-12">
               <img
-                src="/public/dollars.png"
+                src="/dollars.png"
                 alt="Trustify Logo"
                 className="w-full h-full"
               />
@@ -195,7 +195,7 @@ export const HeroPage = () => {
             {/* Icon */}
             <div className="absolute left-4 top-4 w-12 h-12">
               <img
-                src="/public/paint.png"
+                src="/paint.png"
                 alt="Trustify Logo"
                 className="w-full h-full"
               />
