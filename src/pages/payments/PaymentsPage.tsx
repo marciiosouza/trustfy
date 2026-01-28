@@ -38,12 +38,12 @@ export const PaymentsPage = () => {
           <header className="mt-2">
             <h2
               id="payments-heading"
-              className="max-w-138 flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white"
+              className="max-w-138 flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white"
             >
               Por que a Trustfy é a parceira ideal?
             </h2>
             <p
-              className="font-normal text-[24px] leading-7.5 mt-4  text-[rgba(255,255,255,0.7)]"
+              className="font-normal text-[24px] leading-7.5 mt-4 text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Entregue uma experiência de Gateway Próprio, projetado para
@@ -53,9 +53,9 @@ export const PaymentsPage = () => {
 
           <FeaturesList />
 
-          <div className="mt-18.5">
+          <div className="mt-10 md:mt-18.5">
             <Button
-              className="w-[319px] h-[60px] bg-[#7861ff] rounded-[8px] border border-[rgba(255,255,255,0.5)] text-white font-semibold text-[16px] leading-[19px] tracking-[-0.32px] flex items-center justify-between px-[30px] shadow-[0_4px_40px_rgba(120,97,255,0.3),_inset_0_4px_24px_rgba(255,255,255,0.3)] hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
+              className="w-full md:w-[319px] h-[56px] md:h-[60px] bg-[#7861ff] rounded-[8px] border border-[rgba(255,255,255,0.5)] text-white font-semibold text-[14px] md:text-[16px] leading-[19px] tracking-[-0.32px] flex items-center justify-center px-[20px] md:px-[30px] shadow-[0_4px_40px_rgba(120,97,255,0.3),_inset_0_4px_24px_rgba(255,255,255,0.3)] hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
               aria-label="Fazer orçamento"
               style={{ fontFamily: "'Montserrat Thin', sans-serif" }}
             >
@@ -88,7 +88,7 @@ export const PaymentsPage = () => {
         </motion.div>
 
         <motion.aside
-          className="relative"
+          className="relative hidden lg:block"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ amount: 0.3 }}

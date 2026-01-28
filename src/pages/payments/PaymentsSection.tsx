@@ -34,9 +34,9 @@ export const PaymentsPage = () => {
 
           <FeaturesList />
 
-          <div className="mt-18.5">
+          <div className="mt-10 md:mt-18.5">
             <Button
-              className="bg-[#7861ff] text-white rounded-[8px] py-[18px] px-[30px] h-[60px] w-full max-w-[319px] border border-[rgba(255,255,255,0.5)] font-semibold"
+              className="bg-[#7861ff] text-white rounded-[8px] py-[16px] md:py-[18px] px-[24px] md:px-[30px] h-[56px] md:h-[60px] w-full md:max-w-[319px] border border-[rgba(255,255,255,0.5)] font-semibold text-[18px] md:text-base"
               aria-label="Fazer orçamento"
             >
               Fazer orçamento
@@ -65,7 +65,7 @@ export const PaymentsPage = () => {
           </div>
         </div>
 
-        <aside className="relative">
+        <aside className="relative hidden lg:block">
           <figure className="rounded-xl overflow-hidden shadow-2xl">
             <img
               src="/iphone.png"
