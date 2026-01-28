@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-zinc-950 border-b border-[#7861FF]/70 ">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-xs border-b border-[#7861FF]/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-21 items-center justify-between">
           {/* Left: Brand */}

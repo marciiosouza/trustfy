@@ -94,11 +94,11 @@ export const PaymentsPage = () => {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
         >
-          <figure className="rounded-xl overflow-hidden shadow-2xl">
+          <figure className="flex items-center justify-center">
             <img
               src="/iphone.png"
               alt="Mockup de checkout em iPhone"
-              className="w-full h-[960px] object-cover"
+              className="w-full max-w-[600px] mt-12 h-auto object-contain scale-110"
             />
           </figure>
         </motion.aside>
