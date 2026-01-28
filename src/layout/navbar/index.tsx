@@ -13,7 +13,7 @@ export const Navbar = () => {
           {/* Left: Brand */}
           <div className="flex items-center gap-4">
             <img
-              src="/public/logo.svg"
+              src="/logo.svg"
               alt="Trustfy Logo"
               className="h-8.5 w-auto"
             />
