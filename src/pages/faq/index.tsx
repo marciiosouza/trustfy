@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQItem {
   id: string;
@@ -10,44 +11,44 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    id: "001",
-    number: "001",
-    question: "A Black Cat é indicada para qual tipo de negócio?",
+    id: "01",
+    number: "01",
+    question: "Qual o tempo de implementação?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: "002",
-    number: "002",
-    question: "A Black Cat é indicada para qual tipo de negócio?",
+    id: "02",
+    number: "02",
+    question: "Quais são as taxas cobradas?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: "003",
-    number: "003",
-    question: "A Black Cat é indicada para qual tipo de negócio?",
+    id: "03",
+    number: "03",
+    question: "Como posso obter suporte?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: "004",
-    number: "004",
-    question: "A Black Cat é indicada para qual tipo de negócio?",
+    id: "04",
+    number: "04",
+    question: "A plataforma possui sistema antifraude?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: "005",
-    number: "005",
-    question: "A Black Cat é indicada para qual tipo de negócio?",
+    id: "05",
+    number: "05",
+    question: "Quais formas de pagamentos o sistema aceita?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
   {
-    id: "006",
-    number: "006",
-    question: "Como posso integrar a plataforma no meu sistema?",
+    id: "06",
+    number: "06",
+    question: "Preciso ter uma equipe de desenvolvedores para começar?",
     answer:
       "Nossa solução é ideal para empresas que buscam personalização completa em seus processos de pagamento.",
   },
@@ -73,33 +74,67 @@ export const FaqPage = () => {
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1383px] mx-auto text-center">
           {/* Header Badge */}
-          <div className="flex justify-center mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-4"
+          >
             <Button className=" w-52 text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
               Dúvidas Gerais
             </Button>
-          </div>
+          </motion.div>
 
           {/* Main Heading */}
-          <h2 className=" mx-autoflex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className=" mx-autoflex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white"
+          >
             Perguntas Frequentes
-          </h2>
+          </motion.h2>
 
           {/* Description */}
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-center mx-auto mb-16"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
           >
             Confira as respostas para as principais perguntas de quem deseja
             abrir seu próprio Gateway de pagamentos.
-          </p>
+          </motion.p>
 
           {/* FAQ Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26">
-            {faqData.map((item) => {
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26"
+          >
+            {faqData.map((item, index) => {
               const isOpen = openItems.has(item.id);
               return (
-                <div
+                <motion.div
                   key={item.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.02 }}
                   className="relative rounded-2xl bg-black transition-all"
                   style={{
                     boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
@@ -127,13 +162,16 @@ export const FaqPage = () => {
                       </div>
 
                       {/* Plus/Minus Icon */}
-                      <div className="flex items-center justify-center w-6 h-6">
+                      <motion.div
+                        animate={{ rotate: isOpen ? 45 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex items-center justify-center w-6 h-6"
+                      >
                         <svg
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className={`transition-transform ${isOpen ? "rotate-45" : ""}`}
                         >
                           <path
                             d="M12 5V19M5 12H19"
@@ -143,7 +181,7 @@ export const FaqPage = () => {
                             strokeLinejoin="round"
                           />
                         </svg>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Divider */}
@@ -155,23 +193,41 @@ export const FaqPage = () => {
                     </p>
 
                     {/* Answer (when expanded) */}
-                    {isOpen && item.answer && (
-                      <div className="mt-4 pt-4 border-t border-white/10">
-                        <p className="font-normal text-[16px] leading-[22px] text-white/70">
-                          {item.answer}
-                        </p>
-                      </div>
-                    )}
+                    <AnimatePresence>
+                      {isOpen && item.answer && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-4 pt-4 border-t border-white/10">
+                            <p className="font-normal text-[16px] leading-[22px] text-white/70">
+                              {item.answer}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </button>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
-            <button
-              className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center gap-3 group transition-all hover:scale-105"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center gap-3 group"
               style={{
                 boxShadow:
                   "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
@@ -183,12 +239,13 @@ export const FaqPage = () => {
               </span>
 
               {/* Arrow Icon */}
-              <svg
+              <motion.svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="transition-transform group-hover:translate-x-1"
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
               >
                 <path
                   d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -197,9 +254,9 @@ export const FaqPage = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-              </svg>
-            </button>
-          </div>
+              </motion.svg>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
     </section>

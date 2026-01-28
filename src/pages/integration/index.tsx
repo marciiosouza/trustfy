@@ -1,12 +1,25 @@
 import { Button } from "@/components/ui/button";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export const IntegrationPage = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
   return (
-    <section className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black">
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black"
+    >
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1315px] mx-auto h-[700px]">
           {/* Background SVG behind image */}
-          <svg
+          <motion.svg
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            }
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute pointer-events-none z-0"
             width="1238"
             height="714"
@@ -41,36 +54,56 @@ export const IntegrationPage = () => {
                 <stop offset="1" stopOpacity="0.3" />
               </radialGradient>
             </defs>
-          </svg>
+          </motion.svg>
 
           {/* API Code Image - Main Element */}
-          <div className="absolute inset-0 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="absolute inset-0 z-10"
+          >
             <img
               src="/api-code-screen.png"
               alt="API Code Example"
               className="w-full h-full object-contain"
             />
-          </div>
+          </motion.div>
 
           {/* Right Content - Positioned over image */}
-          <div className="absolute right-16 top-[178px] z-10 flex flex-col items-end">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="absolute right-16 top-[178px] z-10 flex flex-col items-end"
+          >
             {/* Heading */}
             <h2 className="max-w-139 text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
               Integração sem dor de cabeça
             </h2>
 
             {/* Description */}
-            <p
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
               className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-right"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Nossa API foi desenhada para ser intuitiva. Referências claras,
               exemplos de código reais e tudo o que seu time técnico precisa
               para rodar em minutos.
-            </p>
+            </motion.p>
 
             {/* CTA Button */}
-            <div className="flex justify-end ">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+              }
+              transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+              className="flex justify-end "
+            >
               <Button
                 className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
                 style={{
@@ -106,8 +139,8 @@ export const IntegrationPage = () => {
                 {/* Border */}
                 <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

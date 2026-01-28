@@ -1,4 +1,5 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { PartnersNetwork } from "./PartnersNetwork";
 import { ConnectContent } from "./ConnectContent";
 
@@ -7,18 +8,31 @@ interface ConnectHeroProps {
 }
 
 export const ConnectHero = memo(({ className = "" }: ConnectHeroProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <section className={`relative w-full h-[897px] ${className}`}>
+    <section ref={ref} className={`relative w-full h-[897px] ${className}`}>
       <div className="relative w-full h-full max-w-[1923px] mx-auto">
         {/* Left side - Partners Network */}
-        <div className="absolute left-[290px] top-[151px] w-[890px] h-[746px]">
-          <PartnersNetwork />
-        </div>
+        <motion.div
+          className="absolute left-[290px] top-[151px] w-[890px] h-[746px]"
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <PartnersNetwork isInView={isInView} />
+        </motion.div>
 
         {/* Right side - Content */}
-        <div className="absolute left-[1041px] top-[183px]">
-          <ConnectContent />
-        </div>
+        <motion.div
+          className="absolute left-[1041px] top-[183px]"
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <ConnectContent isInView={isInView} />
+        </motion.div>
       </div>
     </section>
   );
