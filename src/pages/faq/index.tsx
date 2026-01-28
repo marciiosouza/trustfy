@@ -124,7 +124,7 @@ export const FaqPage = () => {
             }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26"
           >
-            {faqData.map((item, index) => {
+            {faqData.map((item) => {
               const isOpen = openItems.has(item.id);
               return (
                 <motion.div

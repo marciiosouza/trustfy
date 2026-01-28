@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import FeaturesList from "./FeaturesList";
 const payments = "/payments/dollar-payments-onversion.png";
 
@@ -20,7 +20,10 @@ export const PaymentsPage = () => {
           <Button
             className=" left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-10 overflow-hidden"
             aria-label="Pagamentos otimizados"
-            style={{ top: "calc(50% - 40px/2 - 116.6px)", fontFamily: "'Montserrat Thin', sans-serif" }}
+            style={{
+              top: "calc(50% - 40px/2 - 116.6px)",
+              fontFamily: "'Montserrat Thin', sans-serif",
+            }}
           >
             <span className="relative w-4 h-4 flex-none">
               <img
