@@ -53,8 +53,8 @@ export const FeatureCard = ({
           {icon}
         </motion.div>
         <div>
-          <h3 className="text-white text-[16px]">{title}</h3>
-          <p className="text-white/70 text-[14px]">{subtitle}</p>
+          <h3 className="text-white text-[1.25rem] md:text-[16px]">{title}</h3>
+          <p className="text-white/70 text-[1rem] md:text-[14px]">{subtitle}</p>
         </div>
       </motion.div>
     </motion.div>

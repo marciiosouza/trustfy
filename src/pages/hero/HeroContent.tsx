@@ -26,7 +26,7 @@ export const HeroContent = ({
       </motion.h1>
 
       <motion.p
-        className="text-white/70 text-[22px] max-w-[630px] mt-[18px] mb-[28px] mx-auto font-regular"
+        className="text-white/70 text-[1.25rem] md:text-[22px] max-w-[630px] mt-[18px] mb-[28px] mx-auto font-regular"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}

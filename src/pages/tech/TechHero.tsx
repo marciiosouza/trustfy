@@ -6,7 +6,7 @@ interface TechHeroProps {
 export const TechHero = ({ title, description }: TechHeroProps) => {
   return (
     <header className="text-center mb-16 md:mb-20">
-      <h1 className=" flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white">
+      <h1 className=" flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5  tracking-[-1.12px] text-white">
         {title}
       </h1>
       <p

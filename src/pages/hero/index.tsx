@@ -64,7 +64,7 @@ export const HeroPage = () => {
 
           {/* Main Heading */}
           <div className="absolute w-full left-0 right-0 top-44 px-8">
-            <h1 className="max-w-480 mx-auto flex flex-col font-neue-montreal font-normal text-[68px] leading-15.5 text-center tracking-[-1.12px] text-white">
+            <h1 className="max-w-480 mx-auto flex flex-col font-neue-montreal font-normal text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 text-center tracking-[-1.12px] text-white">
               <span> Deixe de ser cliente,</span>
               <span className="font-bold">Vire dono de Gateway</span>
             </h1>

@@ -92,7 +92,7 @@ export const FaqPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className=" mx-autoflex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white"
+            className=" mx-autoflex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
           >
             Perguntas Frequentes
           </motion.h2>

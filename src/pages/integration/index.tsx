@@ -36,7 +36,7 @@ export const IntegrationPage = () => {
             className="flex flex-col items-center text-center px-4"
           >
             {/* Heading */}
-            <h2 className="font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
+            <h2 className="font-neue-montreal font-bold text-[2.5rem] leading-[1.2] tracking-[-1.12px] text-white">
               Integração sem dor de cabeça
             </h2>
 

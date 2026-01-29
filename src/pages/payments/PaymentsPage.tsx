@@ -38,12 +38,12 @@ export const PaymentsPage = () => {
           <header className="mt-2">
             <h2
               id="payments-heading"
-              className="max-w-138 flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white"
+              className="max-w-138 flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
             >
               Por que a Trustfy é a parceira ideal?
             </h2>
             <p
-              className="font-normal text-[24px] leading-7.5 mt-4 text-[rgba(255,255,255,0.7)]"
+              className="font-normal text-[1.475rem] mb-16 mt-4 md:text-[24px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Entregue uma experiência de Gateway Próprio, projetado para

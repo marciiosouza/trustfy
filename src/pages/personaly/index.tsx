@@ -33,7 +33,7 @@ export const PersonalyPage = () => {
         <header className="mb-8">
           <motion.h2
             id="personaly-heading"
-            className=" mx-auto flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white"
+            className=" mx-auto flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5  tracking-[-1.12px] text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -43,7 +43,7 @@ export const DepoimentsPage = () => {
       {/* Mobile Layout */}
       <div className="flex flex-col items-center px-6 py-10 md:hidden">
         {/* Heading - Top on Mobile */}
-        <h2 className="font-neue-montreal font-bold text-[68px] leading-tight tracking-[-1.12px] text-white text-center mb-8">
+        <h2 className="font-neue-montreal font-bold text-[2.5rem] leading-[1.2] tracking-[-1.12px] text-white text-center mb-8">
           Depoimentos de Clientes
         </h2>
 

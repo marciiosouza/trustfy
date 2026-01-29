@@ -17,7 +17,7 @@ export const ConnectContent = memo(
       <div className={`flex flex-col items-end ${className}`}>
         {/* Heading - position: top 183px */}
         <motion.h2
-          className="text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white"
+          className="text-end flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5  tracking-[-1.12px] text-white"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
