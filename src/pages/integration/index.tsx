@@ -9,10 +9,100 @@ export const IntegrationPage = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[815px] flex items-center justify-center py-20 bg-black"
+      className="relative w-full min-h-[815px] md:min-h-[815px] flex items-center justify-center py-12 md:py-20 bg-black"
     >
-      <div className="max-w-[1920px] w-full mx-auto px-8">
-        <div className="relative w-full max-w-[1315px] mx-auto h-[700px]">
+      <div className="max-w-[1920px] w-full mx-auto px-4 md:px-8">
+        {/* Mobile Layout */}
+        <div className="flex flex-col md:hidden gap-8">
+          {/* Image - Mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative w-full overflow-hidden rounded-lg"
+          >
+            <img
+              src="/api-code-screen.png"
+              alt="API Code Example"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
+          {/* Content - Mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col items-center text-center px-4"
+          >
+            {/* Heading */}
+            <h2 className="font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
+              Integração sem dor de cabeça
+            </h2>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+              className="font-normal text-[24px] leading-7.5 mt-6 text-[rgba(255,255,255,0.7)]"
+              style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
+            >
+              Nossa API foi desenhada para ser intuitiva. Referências claras,
+              exemplos de código reais e tudo o que seu time técnico precisa
+              para rodar em minutos.
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+              }
+              transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+              className="mt-8"
+            >
+              <Button
+                className="w-[280px] h-[52px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden"
+                style={{
+                  boxShadow:
+                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  border: "1px solid rgba(255, 255, 255, 0.5)",
+                }}
+              >
+                <span
+                  className="text-[14px] leading-[17px] tracking-[-0.32px] font-semibold"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Fazer orçamento
+                </span>
+
+                {/* Arrow Icon */}
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="transition-transform group-hover:translate-x-1"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+
+                {/* Border */}
+                <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="relative w-full max-w-[1315px] mx-auto h-[700px] hidden md:block">
           {/* Background SVG behind image */}
           <motion.svg
             initial={{ opacity: 0, scale: 0.9 }}

@@ -88,7 +88,7 @@ export const PaymentsPage = () => {
         </motion.div>
 
         <motion.aside
-          className="relative hidden lg:block"
+          className="relative"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ amount: 0.3 }}
@@ -98,7 +98,7 @@ export const PaymentsPage = () => {
             <img
               src="/iphone.png"
               alt="Mockup de checkout em iPhone"
-              className="w-full max-w-[600px] mt-12 h-auto object-contain scale-110"
+              className="w-full max-w-[700px] mt-8 lg:mt-12 h-auto object-contain lg:scale-110"
             />
           </figure>
         </motion.aside>

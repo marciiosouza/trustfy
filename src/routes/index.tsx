@@ -22,7 +22,7 @@ function Index() {
       {/* Background Gradient SVG */}
       
       {/* Wrapper with gradient overlay for Depoiments and Connect sections */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         {/* SVG Gradient Overlay */}
         <svg
           width="3075"
@@ -30,7 +30,7 @@ function Index() {
           viewBox="0 0 927 2074"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute left-0 top-0 pointer-events-none z-50"
+          className="absolute left-0 top-0 pointer-events-none z-0"
           preserveAspectRatio="xMidYMid slice"
           style={{ left: '-862px', top: '0px', width: '3075px', height: '1262.45px' }}
         >
@@ -58,7 +58,7 @@ function Index() {
         </svg>
         
         {/* Content with relative positioning */}
-        <div className="relative z-0">
+        <div className="relative z-10">
           <DepoimentsPage />
           <ConnectPage />
         </div>
