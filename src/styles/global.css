@@ -117,7 +117,7 @@
 
 @layer base {
   html {
-    zoom: 80%;
+    /* zoom: 80%; */
   }
   
   * {
