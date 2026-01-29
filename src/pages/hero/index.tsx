@@ -39,7 +39,7 @@ export const HeroPage = () => {
 
         {/* MacBook Image */}
         <motion.div
-          className="absolute w-[1555px] h-[703px] left-1/2 -translate-x-1/2 top-[538px] pointer-events-none"
+          className="absolute w-[1555px] h-[600px] left-1/2 -translate-x-1/2 top-[538px] pointer-events-none"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
@@ -63,16 +63,16 @@ export const HeroPage = () => {
           </div>
 
           {/* Main Heading */}
-          <div className="absolute w-full left-0 right-0 top-44 px-8">
-            <h1 className="max-w-480 mx-auto flex flex-col font-neue-montreal font-normal text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 text-center tracking-[-1.12px] text-white">
-              <span> Deixe de ser cliente,</span>
+          <div className="absolute w-full left-0 right-0 top-40 px-8">
+            <h1 className="max-w-482 mx-auto flex flex-col font-neue-montreal text-[58px] md:text-[52pxpx] leading-[1.2] md:leading-14 text-center tracking-[-1.12px] text-white">
+              <span className="font-medium"> Deixe de ser cliente,</span>
               <span className="font-bold">Vire dono de Gateway</span>
             </h1>
           </div>
 
           {/* Description */}
-          <div className="absolute w-full max-w-170 left-1/2 -translate-x-1/2 top-83">
-            <p className="font-neue-montreal font-normal text-[24px] leading-7.5 text-center text-[rgba(255,255,255,0.7)]">
+          <div className="absolute w-full max-w-148 left-1/2 -translate-x-1/2 top-74">
+            <p className="font-neue-montreal font-normal text-[22px] leading-7 tracking-wide text-center text-[rgba(255,255,255,0.7)]">
               Nossa tecnologia, sua marca: personalize o sistema, defina suas
               taxas e escale seu negócio com segurança absoluta.
             </p>
@@ -80,7 +80,7 @@ export const HeroPage = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="absolute w-[396.44px] h-[60px] left-1/2 -translate-x-1/2 top-[439.41px] flex gap-[24px]"
+            className="absolute h-[60px] left-1/2 -translate-x-1/2 top-[412px] flex gap-[24px]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -88,48 +88,37 @@ export const HeroPage = () => {
             {/* Primary Button */}
             <Button asChild>
               <motion.button
-                className="relative w-[210.81px] h-15 bg-[#7861FF] rounded-lg flex items-center justify-center px-6 gap-3 group transition-all"
+                className="relative w-[210.81px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                 style={{
                   boxShadow:
                     "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
                 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow:
-                    "0px 4px 50px rgba(120,97,255,0.5), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <span className="font-montserrat font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
+                <span className=" font-medium text-[16px] text-white">
                   Fazer orçamento
                 </span>
-                <ArrowRight className="w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
-                <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
+                <ArrowRight className="w-6 h-6 text-white" />
               </motion.button>
             </Button>
 
             {/* Secondary Button */}
             <Button asChild>
               <motion.button
-                className="relative w-[161.63px] h-[60px] bg-black rounded-[8px] flex items-center justify-center px-6 gap-2 group transition-all"
+                className="relative w-[161.63px] h-[60px]  border-0 bg-black rounded-[8px] flex items-center justify-center gap-2 group"
                 style={{
                   boxShadow:
                     "0px 4px 24px rgba(120, 97, 255, 0.1), inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
                   backdropFilter: "blur(5px)",
                 }}
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "#0a0a0a",
-                }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <span className="absolute left-6 top-1/2 -translate-y-1/2 font-montserrat font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
+                <span className="font-medium text-[16px] text-white">
                   Saiba mais
                 </span>
-                <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 text-white transition-transform group-hover:translate-x-1" />
-                <div className="absolute inset-0 border border-white/10 rounded-[8px] pointer-events-none" />
+                <ChevronDown className="w-6 h-6 text-white" />
               </motion.button>
             </Button>
           </motion.div>
