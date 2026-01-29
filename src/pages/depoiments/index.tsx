@@ -43,12 +43,12 @@ export const DepoimentsPage = () => {
       {/* Mobile Layout */}
       <div className="flex flex-col items-center px-6 py-10 md:hidden">
         {/* Heading - Top on Mobile */}
-        <h2 className="font-neue-montreal font-bold text-[2.5rem] leading-[1.2] tracking-[-1.12px] text-white text-center mb-8">
+        <h2 className="font-neue-montreal font-bold text-[2.5rem] leading-[1] tracking-[-1.12px] text-white text-center mb-8">
           Depoimentos de Clientes
         </h2>
 
         {/* Testimonial Text with Quotes */}
-        <div className="relative w-full max-w-[500px] mb-8">
+        <div className="relative w-full max-w-[340px] mb-8">
           {/* Quote Icon - Left */}
           <img
             src="/cards/aspas-left.png"
@@ -63,7 +63,7 @@ export const DepoimentsPage = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -100, opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="font-rubik font-light text-[26px] leading-[34px] text-white text-center px-6"
+              className="font-rubik font-light text-[16px] leading-[24px] text-white text-center px-6"
             >
               {currentTestimonial.text}
             </motion.p>
@@ -105,10 +105,10 @@ export const DepoimentsPage = () => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="text-center"
             >
-              <p className="font-medium text-[28px] leading-[36px] text-white">
+              <p className="font-medium text-[18px] leading-[24px] text-white mb-2">
                 {currentTestimonial.name}
               </p>
-              <p className="font-rubik font-light text-[22px] leading-[30px] text-white">
+              <p className="font-rubik font-light text-[14px] leading-[20px] text-white">
                 {currentTestimonial.company}
               </p>
             </motion.div>
