@@ -36,7 +36,7 @@ const features = [
 const FeaturesList: FC = () => {
   return (
     <ul
-      className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-6 mt-8 md:mt-8"
       role="list"
       aria-label="Recursos"
     >

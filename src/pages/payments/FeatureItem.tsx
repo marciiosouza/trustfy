@@ -19,8 +19,8 @@ const FeatureItem: FC<FeatureItemProps> = ({ title, description, icon }) => {
       </div>
 
       <div>
-        <h3 className="font-semibold text-white text-[1.5rem] md:text-[24px] leading-tight">{title}</h3>
-        <p className="mt-1 text-[1.275rem] md:text-[20px] text-gray-300 leading-relaxed">{description}</p>
+        <h3 className="font-semibold text-white text-[1.5rem] md:text-[20px] leading-tight">{title}</h3>
+        <p className="mt-1 text-[1.275rem] md:text-[16px] tracking-[1px] text-gray-300 leading-relaxed">{description}</p>
       </div>
     </li>
   );

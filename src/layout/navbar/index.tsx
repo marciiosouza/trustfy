@@ -7,33 +7,33 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-xs border-b border-[#7861FF]/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
-        <div className="flex py-[16px] items-center justify-between">
+    <nav className="fixed  top-0 left-0 right-0 z-50 h-[84.8px] bg-zinc-950/60 backdrop-blur-xs border-b border-[#7861FF]/70">
+      <div className="mx-auto px-4 sm:px-6 md:px-[240px] h-full flex items-center">
+        <div className="flex items-center justify-between h-[44.8px] w-full">
           {/* Left: Brand */}
           <div className="flex items-center gap-4">
             <img
               src="/logo.svg"
               alt="Trustfy Logo"
-              className="h-[32px] w-auto"
+              className="h-[36px] w-[192px] object-contain"
             />
           </div>
 
           {/* Center: Nav Links (desktop) */}
-          <ul className="hidden md:flex md:flex-1 md:items-center md:justify-center md:space-x-6">
-            <li className="text-[14px] text-zinc-200 hover:text-[#7861FF] cursor-pointer">
+          <ul className="hidden md:flex md:flex-1 md:items-center md:justify-center md:space-x-6 h-[33px]">
+            <li className="text-[14px] leading-[14px] tracking-[1px] text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] cursor-pointer">
               Vantagens
             </li>
-            <li className="text-[14px] text-zinc-200 hover:text-[#7861FF] cursor-pointer">
+            <li className="text-[14px] leading-[14px] tracking-[1px] text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] cursor-pointer">
               Tecnologia
             </li>
-            <li className="text-[14px] text-zinc-200 hover:text-[#7861FF] cursor-pointer">
+            <li className="text-[14px] leading-[14px] tracking-[1px] text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] cursor-pointer">
               Integrações
             </li>
-            <li className="text-[14px] text-zinc-200 hover:text-[#7861FF] cursor-pointer">
+            <li className="text-[14px] leading-[14px] tracking-[1px] text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] cursor-pointer">
               API
             </li>
-            <li className="text-[14px] text-zinc-200 hover:text-[#7861FF] cursor-pointer">
+            <li className="text-[14px] leading-[14px] tracking-[1px] text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] cursor-pointer">
               FAQ
             </li>
           </ul>
@@ -41,7 +41,7 @@ export const Navbar = () => {
           <div className="hidden md:flex md:items-center">
             <Button
               variant="outline"
-              className="flex items-center justify-center bg-[rgba(96,77,209,5%)] border border-[rgba(120,97,255,50%)] rounded-[8px] text-[#7861FF] hover:bg-[rgba(120,97,255,0.1)] hover:text-[#7861FF]  font-bold text-[12px]"
+              className="flex items-center justify-center bg-[rgba(96,77,209,0.05)] border border-[rgba(120,97,255,0.5)] rounded-[8px] text-[#7861FF] hover:bg-[rgba(120,97,255,0.1)] font-[700] text-[14px] h-[44.8px] px-4"
             >
               <img
                 src={whatsapp}
@@ -73,19 +73,19 @@ export const Navbar = () => {
         {/* Mobile menu */}
         {open && (
           <ul className="md:hidden mt-2 space-y-2 pb-4">
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
+            <li className="block px-2 py-2 rounded-md text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] ">
               Vantagens
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
+            <li className="block px-2 py-2 rounded-md text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] ">
               Tecnologia
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
+            <li className="block px-2 py-2 rounded-md text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] ">
               Integrações
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
+            <li className="block px-2 py-2 rounded-md text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] ">
               API
             </li>
-            <li className="block px-2 py-2 rounded-md text-zinc-200 hover:text-[#7861FF] ">
+            <li className="block px-2 py-2 rounded-md text-[rgba(255,255,255,0.8)] hover:text-[#7861FF] ">
               FAQ
             </li>
             <div className="flex items-center gap-2 px-2">

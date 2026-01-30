@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import FeaturesList from "./FeaturesList";
+import { ArrowRight } from "lucide-react";
 const payments = "/payments/dollar-payments-onversion.png";
 
 export const PaymentsPage = () => {
@@ -9,7 +10,7 @@ export const PaymentsPage = () => {
       className="py-16 px-6 lg:px-24 bg-black border-b border-zinc-700/50 w-full"
       aria-labelledby="payments-heading"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <motion.div
           className="relative"
           initial={{ opacity: 0, y: 40 }}
@@ -17,12 +18,14 @@ export const PaymentsPage = () => {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <Button
-            className=" left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-10 overflow-hidden"
+          <div
+            className="left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-8 overflow-hidden"
             aria-label="Pagamentos otimizados"
             style={{
               top: "calc(50% - 40px/2 - 116.6px)",
               fontFamily: "'Montserrat Thin', sans-serif",
+              backdropFilter: "blur(4px)",
+              WebkitBackdropFilter: "blur(4px)",
             }}
           >
             <span className="relative w-4 h-4 flex-none">
@@ -33,17 +36,17 @@ export const PaymentsPage = () => {
               />
             </span>
             <span className="mx-auto">Pagamentos otimizados</span>
-          </Button>
+          </div>
 
           <header className="mt-2">
             <h2
               id="payments-heading"
-              className="max-w-138 flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
+              className="max-w-132 flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
             >
               Por que a Trustfy é a parceira ideal?
             </h2>
             <p
-              className="font-normal text-[1.475rem] mb-16 mt-4 md:text-[24px] leading-7.5  text-[rgba(255,255,255,0.7)]"
+              className="font-normal max-w-[534px] tracking-[1.46px] text-[1.475rem] mb-16 mt-2 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Entregue uma experiência de Gateway Próprio, projetado para
@@ -53,54 +56,166 @@ export const PaymentsPage = () => {
 
           <FeaturesList />
 
-          <div className="mt-10 md:mt-18.5">
-            <Button
-              className="w-full md:w-[319px] h-[56px] md:h-[60px] bg-[#7861ff] rounded-[8px] border border-[rgba(255,255,255,0.5)] text-white font-semibold text-[14px] md:text-[16px] leading-[19px] tracking-[-0.32px] flex items-center justify-center px-[20px] md:px-[30px] shadow-[0_4px_40px_rgba(120,97,255,0.3),_inset_0_4px_24px_rgba(255,255,255,0.3)] hover:bg-[#6640F5] hover:shadow-[0px_4px_50px_rgba(120,97,255,0.4)]"
-              aria-label="Fazer orçamento"
-              style={{ fontFamily: "'Montserrat Thin', sans-serif" }}
-            >
-              <span className=" flex items-center justify-center gap-2 mx-auto ">
-                Fazer orçamento{" "}
-                <svg
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M5 12h14"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 5l7 7-7 7"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+          <div className="mt-10 md:mt-14">
+            <Button asChild>
+              <motion.button
+                className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                style={{
+                  boxShadow:
+                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <span className=" font-medium text-[16px] text-white">
+                  Fazer orçamento
+                </span>
+                <ArrowRight className="w-6 h-6 text-white" />
+              </motion.button>
             </Button>
           </div>
         </motion.div>
 
         <motion.aside
-          className="relative"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className="relative flex items-center justify-center mt-8 lg:mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <figure className="flex items-center justify-center">
-            <img
-              src="/iphone.png"
-              alt="Mockup de checkout em iPhone"
-              className="w-full max-w-[700px] mt-8 lg:mt-12 h-auto object-contain lg:scale-110"
-            />
-          </figure>
+          <div className="relative w-[778px] h-[990px]">
+            {/* Radial gradient background container */}
+
+            {/* iPhone mockup - positioned at x: 209px, y: 121px */}
+            <motion.figure
+              className="absolute z-10 transform"
+              style={{
+                left: "134px",
+                top: "22px",
+                width: "472px",
+                height: "632px",
+                transformOrigin: "center",
+              }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <img
+                src="/phone/iphone.png"
+                alt="Mockup de checkout em iPhone"
+                className="block w-[472px] h-[632px] object-contain md:scale-[1.25] lg:scale-[1.5] xl:scale-[1.7]"
+              />
+            </motion.figure>
+
+            {/* Notification 3 - Largest moved to top (432.62 x 88.61) */}
+            <motion.div
+              className="absolute z-40"
+              style={{
+                left: "152px",
+                top: "517px",
+                width: "442.62px",
+                height: "192px",
+              }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              animate={{
+                scale: [1, 1.03, 1],
+              }}
+              // @ts-ignore
+              transition={{
+                duration: 0.6,
+                delay: 1.2,
+                ease: "easeOut",
+                scale: {
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 1.8,
+                },
+              }}
+            >
+              <img
+                src="/phone/notificacao.png"
+                alt="Notificação de transferência"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+
+            {/* Notification 2 - Medium centered above largest (371.77 x 76.14) */}
+            <motion.div
+              className="absolute z-30"
+              style={{
+                left: "180px",
+                top: "574px",
+                width: "381.77px",
+                height: "162px",
+              }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+              animate={{
+                scale: [1, 1.03, 1],
+              }}
+              // @ts-ignore
+              transition={{
+                duration: 0.6,
+                delay: 1.4,
+                ease: "easeOut",
+                scale: {
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 2.0,
+                },
+              }}
+            >
+              <img
+                src="/phone/notificacao-02.png"
+                alt="Notificação de transferência"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+
+            {/* Notification 1 - Smallest moved to bottom (310.98 x 63.69) */}
+            <motion.div
+              className="absolute z-20"
+              style={{
+                left: "216px",
+                top: "634px",
+                width: "320.98px",
+                height: "106px",
+              }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+              animate={{
+                scale: [1, 1.03, 1],
+              }}
+              // @ts-ignore
+              transition={{
+                duration: 0.6,
+                delay: 1.6,
+                ease: "easeOut",
+                scale: {
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 2.2,
+                },
+              }}
+            >
+              <img
+                src="/phone/notificacao-03.png"
+                alt="Notificação de transferência"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          </div>
         </motion.aside>
       </div>
     </section>
