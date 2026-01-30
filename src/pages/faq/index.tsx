@@ -110,9 +110,9 @@ export const FaqPage = () => {
             initial={{ opacity: 0, scale: 0.8, y: -20 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ 
+            transition={{
               duration: 0.6,
-              ease: [0.16, 1, 0.3, 1]
+              ease: [0.16, 1, 0.3, 1],
             }}
             className="flex justify-center mb-4"
           >
@@ -137,10 +137,10 @@ export const FaqPage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ 
+            transition={{
               duration: 0.7,
               delay: 0.15,
-              ease: [0.16, 1, 0.3, 1]
+              ease: [0.16, 1, 0.3, 1],
             }}
             className=" flex flex-col mx-auto font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
           >
@@ -152,10 +152,10 @@ export const FaqPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ 
+            transition={{
               duration: 0.7,
               delay: 0.3,
-              ease: [0.16, 1, 0.3, 1]
+              ease: [0.16, 1, 0.3, 1],
             }}
             className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-10 mt-4 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
@@ -212,12 +212,12 @@ export const FaqPage = () => {
 
                       {/* Plus/Minus Icon */}
                       <motion.div
-                        animate={{ 
+                        animate={{
                           rotate: isOpen ? 135 : 0,
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 0.4,
-                          ease: [0.16, 1, 0.3, 1]
+                          ease: [0.16, 1, 0.3, 1],
                         }}
                         className="flex items-center justify-center w-6 h-6"
                       >
@@ -234,7 +234,7 @@ export const FaqPage = () => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             animate={{
-                              stroke: isOpen ? "#FFFFFF" : "#7861FF"
+                              stroke: isOpen ? "#FFFFFF" : "#7861FF",
                             }}
                             transition={{ duration: 0.3 }}
                           />
@@ -243,20 +243,20 @@ export const FaqPage = () => {
                     </div>
 
                     {/* Divider */}
-                    <motion.div 
+                    <motion.div
                       className="h-[1px] bg-white/10 mb-4"
                       animate={{
                         scaleX: isOpen ? 1 : 0.95,
-                        opacity: isOpen ? 1 : 0.5
+                        opacity: isOpen ? 1 : 0.5,
                       }}
                       transition={{ duration: 0.3 }}
                     />
 
                     {/* Question */}
-                    <motion.p 
+                    <motion.p
                       className="font-normal text-[18px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]"
                       animate={{
-                        color: isOpen ? "#FFFFFF" : "#F3F3F3"
+                        color: isOpen ? "#FFFFFF" : "#F3F3F3",
                       }}
                       transition={{ duration: 0.3 }}
                     >
@@ -267,28 +267,28 @@ export const FaqPage = () => {
                     <AnimatePresence mode="wait">
                       {isOpen && item.answer && (
                         <motion.div
-                          initial={{ 
-                            height: 0, 
+                          initial={{
+                            height: 0,
                             opacity: 0,
-                            y: -10
+                            y: -10,
                           }}
-                          animate={{ 
-                            height: "auto", 
+                          animate={{
+                            height: "auto",
                             opacity: 1,
-                            y: 0
+                            y: 0,
                           }}
-                          exit={{ 
-                            height: 0, 
+                          exit={{
+                            height: 0,
                             opacity: 0,
-                            y: -10
+                            y: -10,
                           }}
-                          transition={{ 
+                          transition={{
                             duration: 0.4,
-                            ease: [0.16, 1, 0.3, 1]
+                            ease: [0.16, 1, 0.3, 1],
                           }}
                           className="overflow-hidden"
                         >
-                          <motion.div 
+                          <motion.div
                             className="mt-4 pt-4 border-t border-white/10"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -312,23 +312,19 @@ export const FaqPage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: 0.5,
-              ease: [0.16, 1, 0.3, 1]
+              ease: [0.16, 1, 0.3, 1],
             }}
             className="flex justify-center"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="mt-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ 
-                duration: 0.6, 
-                delay: 0.7, 
-                ease: [0.16, 1, 0.3, 1]
-              }}
-              className="flex justify-end "
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             >
               <Button asChild>
                 <motion.button
@@ -337,32 +333,13 @@ export const FaqPage = () => {
                     boxShadow:
                       "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
                   }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0px 6px 50px rgba(120, 97, 255, 0.5), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 400, 
-                    damping: 17 
-                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <motion.span 
-                    className="font-medium text-[16px] text-white"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: -5 }}
-                    transition={{ duration: 0.2 }}
-                  >
+                  <span className=" font-medium text-[16px] text-white">
                     Fazer orçamento
-                  </motion.span>
-                  <motion.div
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ArrowRight className="w-6 h-6 text-white" />
-                  </motion.div>
+                  </span>
+                  <ArrowRight className="w-6 h-6 text-white" />
                 </motion.button>
               </Button>
             </motion.div>

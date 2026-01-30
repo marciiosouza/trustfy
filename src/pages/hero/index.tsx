@@ -59,7 +59,7 @@ export const HeroPage = () => {
 
   const leftWhileInView = shouldReduceMotion
     ? { opacity: 1, x: 0 }
-    : { opacity: 1, x: 0, y: [0, -8, 0] };
+    : { opacity: 1, x: 0, y: [0, -58, 0] };
 
   const leftTransition = (shouldReduceMotion
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -75,7 +75,7 @@ export const HeroPage = () => {
 
   const rightWhileInView = shouldReduceMotion
     ? { opacity: 1, x: 0 }
-    : { opacity: 1, x: 0, y: [0, -8, 0] };
+    : { opacity: 1, x: 0, y: [0, -68, 0] };
 
   const rightTransition = (shouldReduceMotion
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -197,11 +197,12 @@ export const HeroPage = () => {
             {/* Secondary Button */}
             <Button asChild>
               <motion.button
-                className="relative w-[161.63px] h-[60px]  border-0 bg-black rounded-[8px] flex items-center justify-center gap-2 group"
+                className="relative w-[161.63px] h-[60px]  border-0 bg-black rounded-[8px] flex items-center justify-center gap-2 group hover:bg-black/90 transition-colors"
                 style={{
                   boxShadow:
                     "0px 4px 24px rgba(120, 97, 255, 0.1), inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
                   backdropFilter: "blur(5px)",
+                  
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}

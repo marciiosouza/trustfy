@@ -7,19 +7,19 @@ const payments = "/payments/dollar-payments-onversion.png";
 export const PaymentsPage = () => {
   return (
     <section
-      className="py-14  px-6 lg:px-24 bg-black border-b border-zinc-700/50 w-full"
+      className="py-12  px-6 lg:px-24 bg-black border-b border-zinc-700/50 w-full"
       aria-labelledby="payments-heading"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start justify-center">
         <motion.div
-          className="relative"
+          className="relative lg:translate-x-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <div
-            className="left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-8 overflow-hidden"
+            className="left-0 w-[250px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[10px] mb-6 overflow-hidden"
             aria-label="Pagamentos otimizados"
             style={{
               top: "calc(50% - 40px/2 - 116.6px)",
@@ -38,15 +38,15 @@ export const PaymentsPage = () => {
             <span className="mx-auto">Pagamentos otimizados</span>
           </div>
 
-          <header className="mt-2">
+          <header className="mt-1">
             <h2
               id="payments-heading"
-              className="max-w-132 flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
+              className="max-w-132 flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white mt-0.5"
             >
               Por que a Trustfy é a parceira ideal?
             </h2>
             <p
-              className="font-normal max-w-[534px] tracking-[1.46px] text-[1.475rem] mb-16 mt-2 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
+              className="font-normal max-w-[460px] tracking-[1.46px] text-[1.475rem] mb-10 mt-1 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Entregue uma experiência de Gateway Próprio, projetado para
@@ -56,10 +56,10 @@ export const PaymentsPage = () => {
 
           <FeaturesList />
 
-          <div className="mt-10 md:mt-14">
+          <div className="mt-6 md:mt-10">
             <Button asChild>
               <motion.button
-                className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                className="relative w-[280px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                 style={{
                   boxShadow:
                     "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
@@ -77,11 +77,11 @@ export const PaymentsPage = () => {
         </motion.div>
 
         <motion.aside
-          className="relative flex items-center justify-center mt-8 lg:mt-12"
+          className="relative flex items-center justify-center mt-8 lg:mt-24"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
         >
           <div className="relative w-[650px] h-[825px]">
             {/* Radial gradient background container */}
@@ -98,8 +98,8 @@ export const PaymentsPage = () => {
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ amount: 0.2 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
             >
               <img
                 src="/phone/iphone.png"
@@ -119,21 +119,19 @@ export const PaymentsPage = () => {
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              viewport={{ amount: 0.2 }}
               animate={{
                 scale: [1, 1.03, 1],
               }}
-              // @ts-ignore
               transition={{
-                duration: 0.6,
-                delay: 1.2,
+                duration: 0.35,
+                delay: 0.6,
                 ease: "easeOut",
                 scale: {
-                  duration: 1.5,
+                  duration: 0.9,
                   repeat: Infinity,
                   repeatType: "loop",
-                  delay: 1.8,
+                  delay: 0.7,
                 },
               }}
             >
@@ -155,21 +153,19 @@ export const PaymentsPage = () => {
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+              viewport={{ amount: 0.2 }}
               animate={{
                 scale: [1, 1.03, 1],
               }}
-              // @ts-ignore
               transition={{
-                duration: 0.6,
-                delay: 1.4,
+                duration: 0.35,
+                delay: 0.75,
                 ease: "easeOut",
                 scale: {
-                  duration: 1.5,
+                  duration: 0.9,
                   repeat: Infinity,
                   repeatType: "loop",
-                  delay: 2.0,
+                  delay: 0.9,
                 },
               }}
             >
@@ -191,21 +187,19 @@ export const PaymentsPage = () => {
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+              viewport={{ amount: 0.2 }}
               animate={{
                 scale: [1, 1.03, 1],
               }}
-              // @ts-ignore
               transition={{
-                duration: 0.6,
-                delay: 1.6,
+                duration: 0.35,
+                delay: 0.9,
                 ease: "easeOut",
                 scale: {
-                  duration: 1.5,
+                  duration: 0.9,
                   repeat: Infinity,
                   repeatType: "loop",
-                  delay: 2.2,
+                  delay: 1.0,
                 },
               }}
             >
