@@ -59,7 +59,7 @@ export const HeroPage = () => {
 
   const leftWhileInView = shouldReduceMotion
     ? { opacity: 1, x: 0 }
-    : { opacity: 1, x: 0, y: [0, -58, 0] };
+    : { opacity: 1, x: 0, y: [0, -288, 0] };
 
   const leftTransition = (shouldReduceMotion
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -75,7 +75,7 @@ export const HeroPage = () => {
 
   const rightWhileInView = shouldReduceMotion
     ? { opacity: 1, x: 0 }
-    : { opacity: 1, x: 0, y: [0, -68, 0] };
+    : { opacity: 1, x: 0, y: [0, 288, 0] };
 
   const rightTransition = (shouldReduceMotion
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -259,7 +259,7 @@ export const HeroPage = () => {
 
           {/* Feature Card - Right (Personalize) */}
           <motion.div
-            className="absolute w-76 h-[136.2px] right-[156px] top-[642px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
+            className="absolute w-76 h-[136.2px] right-[156px] top-[542px] bg-black/80 rounded-[16px] border border-white/10 backdrop-blur-[4px]"
             style={{
               boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.1)",
             }}
