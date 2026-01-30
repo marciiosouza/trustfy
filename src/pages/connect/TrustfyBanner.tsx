@@ -33,7 +33,7 @@ export const TrustfyBanner = memo(({ className = "" }: TrustfyBannerProps) => {
       `}</style>
 
       <div
-        className={`w-full h-[76px] overflow-visible flex items-center justify-center bg-violet-600 ${className}`}
+        className={`w-full h-[76px] overflow-visible flex items-center justify-center ${className}`}
       >
         {/* Faixa horizontal única */}
         <div
@@ -41,9 +41,9 @@ export const TrustfyBanner = memo(({ className = "" }: TrustfyBannerProps) => {
           style={{
             width: "100%",
             left: "0",
-            background: "linear-gradient(90deg, #7861FF 0%, #B8AAFF 100%)",
-            boxShadow:
-              "0px 4px 2px rgba(0, 0, 0, 0.25), 0px 4px 40px rgba(120, 97, 255, 0.3)",
+           background: "linear-gradient(90.01deg, #7861FF -0.12%, #7E68FF 50.05%, #7861FF 100.22%)",
+           boxShadow: "0px 4px 40px rgba(120, 97, 255, 0.3), 0px 13px 14.7px rgba(0, 0, 0, 0.39)",
+           filter: "blur(3.5px)",
           }}
         >
           <div

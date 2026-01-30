@@ -2,6 +2,56 @@ import { BrandsStrip } from "./BrandsStrip";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]; typingSpeed?: number; pause?: number; }) => {
+  const shouldReduceMotion = useReducedMotion();
+  const [index, setIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setDisplayed(words[0] ?? "");
+      return;
+    }
+    let timeout: number | undefined;
+    const full = words[index] ?? "";
+    if (!isDeleting) {
+      if (displayed.length < full.length) {
+        timeout = window.setTimeout(() => setDisplayed(full.slice(0, displayed.length + 1)), typingSpeed);
+      } else {
+        timeout = window.setTimeout(() => setIsDeleting(true), pause);
+      }
+    } else {
+      if (displayed.length > 0) {
+        timeout = window.setTimeout(() => setDisplayed(full.slice(0, displayed.length - 1)), Math.max(20, typingSpeed / 2));
+      } else {
+        setIsDeleting(false);
+        setIndex((i) => (i + 1) % words.length);
+      }
+    }
+    return () => {
+      if (timeout !== undefined) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [displayed, isDeleting, index, words, typingSpeed, pause, shouldReduceMotion]);
+
+  return (
+    <span>
+      {displayed}
+      <motion.span
+        aria-hidden
+        animate={shouldReduceMotion ? {} : { opacity: [0, 1] }}
+        transition={{ repeat: shouldReduceMotion ? 0 : Infinity, duration: 0.7 }}
+        className="ml-1"
+      >
+        |
+      </motion.span>
+    </span>
+  );
+};
 
 export const HeroPage = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -10,25 +60,25 @@ export const HeroPage = () => {
     ? { opacity: 1, x: 0 }
     : { opacity: 1, x: 0, y: [0, -8, 0] };
 
-  const leftTransition = shouldReduceMotion
-    ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } }
+  const leftTransition = (shouldReduceMotion
+    ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any } }
     : {
         opacity: { duration: 0.8 },
-        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
-        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.2 },
-      }; 
+        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.2 },
+      }) as any; 
 
   const rightWhileInView = shouldReduceMotion
     ? { opacity: 1, x: 0 }
     : { opacity: 1, x: 0, y: [0, -8, 0] };
 
-  const rightTransition = shouldReduceMotion
-    ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } }
+  const rightTransition = (shouldReduceMotion
+    ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any } }
     : {
         opacity: { duration: 0.8 },
-        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
-        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.7 },
-      }; 
+        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.7 },
+      }) as any; 
 
   return (
     <section className="relative w-full bg-black overflow-hidden">
@@ -92,7 +142,13 @@ export const HeroPage = () => {
           <div className="absolute w-full left-0 right-0 top-40 px-8">
             <h1 className="max-w-482 mx-auto flex flex-col font-neue-montreal text-[72px] md:text-[72px] leading-[67.2px] md:leading-[67.2px] text-center tracking-[-1.12px] text-white">
               <span className="font-regular"> Deixe de ser cliente,</span>
-              <span className="font-bold">Vire dono de Gateway</span>
+              <span className="font-bold">
+                <Typewriter
+                  words={["Vire dono de Gateway"]}
+                  typingSpeed={160}
+                  pause={3400}
+                />
+              </span>
             </h1>
           </div>
 

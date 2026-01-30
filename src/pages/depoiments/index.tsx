@@ -127,7 +127,7 @@ export const DepoimentsPage = () => {
 
             {/* Testimonial Text */}
             <div className="absolute left-[357px] top-[32px] w-[711px] h-[92px]">
-              <p className="font-rubik font-light text-[22px] leading-[32px] text-white flex items-center">
+              <p className="font-rubik font-light text-[18px] leading-[32px] text-white flex items-center">
                 {currentTestimonial.text}
               </p>
             </div>
@@ -142,9 +142,9 @@ export const DepoimentsPage = () => {
             </div>
 
             {/* Profile Section */}
-            <div className="absolute left-[355px] top-[199px]">
+            <div className="absolute left-[355px] top-[162px]">
               {/* Profile Image with Border */}
-              <div className="w-[100px] h-[100px] border-2 border-white rounded-[20px] box-border overflow-hidden">
+              <div className="w-full h-full border-2 border-white rounded-[20px] overflow-hidden">
                 <img
                   src={currentTestimonial.image}
                   alt="Profile"
@@ -153,7 +153,7 @@ export const DepoimentsPage = () => {
               </div>
 
               {/* Name and Company */}
-              <div className="absolute left-[132px] top-[16px]">
+              <div className="absolute left-[132px] top-[24px]">
                 <p className="font-medium text-[20px] leading-[28px] text-white flex items-center w-[157.01px] h-[28px]">
                   {currentTestimonial.name}
                 </p>
@@ -166,8 +166,8 @@ export const DepoimentsPage = () => {
         </AnimatePresence>
 
         {/* Heading - Right Side */}
-        <div className="absolute left-[1231px] top-[92px] w-[410px] h-[143px]">
-          <h2 className="max-w-138 text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5  tracking-[-1.12px] text-white">
+        <div className="absolute text-end left-[1231px] top-[92px] w-[410px] h-[143px]">
+          <h2 className=" flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white">
             Depoimentos de Clientes
           </h2>
         </div>

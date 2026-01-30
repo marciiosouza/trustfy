@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export const PersonalyPage = () => {
@@ -24,16 +25,25 @@ export const PersonalyPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Button className="text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
-            Personalização Total{" "}
-          </Button>
+          <div
+            className="left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-8 overflow-hidden"
+            aria-label="Pagamentos otimizados"
+            style={{
+              top: "calc(50% - 40px/2 - 116.6px)",
+              fontFamily: "'Montserrat Thin', sans-serif",
+              backdropFilter: "blur(4px)",
+              WebkitBackdropFilter: "blur(4px)",
+            }}
+          >
+            <span className="mx-auto">Personalização Total</span>
+          </div>
         </motion.div>
 
         {/* Main Heading */}
         <header className="mb-8">
           <motion.h2
             id="personaly-heading"
-            className=" mx-auto flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5  tracking-[-1.12px] text-white"
+            className=" flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -42,7 +52,7 @@ export const PersonalyPage = () => {
             Design 100% Sob Medida
           </motion.h2>
           <motion.p
-            className="font-normal text-[24px] leading-7.5 mt-4  text-[rgba(255,255,255,0.7)] max-w-[820px] text-center mx-auto"
+            className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-16 mt-8 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -139,40 +149,21 @@ export const PersonalyPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button
-            className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
-            style={{
-              boxShadow:
-                "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-              border: "1px solid rgba(255, 255, 255, 0.5)",
-            }}
-          >
-            <span
-              className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
+          <Button asChild>
+            <motion.button
+              className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+              style={{
+                boxShadow:
+                  "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              Fazer orçamento
-            </span>
-
-            {/* Arrow Icon */}
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="transition-transform group-hover:translate-x-1"
-            >
-              <path
-                d="M5 12H19M19 12L12 5M19 12L12 19"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-
-            {/* Border */}
-            <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
+              <span className=" font-medium text-[16px] text-white">
+                Fazer orçamento
+              </span>
+              <ArrowRight className="w-6 h-6 text-white" />
+            </motion.button>
           </Button>
         </motion.div>
       </div>
@@ -191,7 +182,7 @@ export const PersonalyPage = () => {
           width: "2033px",
           height: "992px",
           left: "calc(50% - 2033px/2 - 1.5px)",
-          top: "192px",
+          top: "242px",
           zIndex: 0,
           transform: "translateZ(0)",
         }}

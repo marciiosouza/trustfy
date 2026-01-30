@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface FAQItem {
   id: string;
@@ -54,6 +55,35 @@ const faqData: FAQItem[] = [
   },
 ];
 
+// Motion variants: container for staggering and items with index-based delays
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: (i = 0) => ({
+    opacity: 0,
+    y: 28,
+    scale: 0.995,
+  }),
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+      delay: i * 0.04,
+    },
+  }),
+};
+
 export const FaqPage = () => {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
@@ -69,30 +99,50 @@ export const FaqPage = () => {
     });
   };
 
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="relative w-full min-h-[946px] flex items-center justify-center py-20 bg-black">
+    <section className="relative w-full min-h-[946px] flex items-center justify-center py-20 bg-black overflow-hidden">
       <div className="max-w-[1920px] w-full mx-auto px-8">
         <div className="relative w-full max-w-[1383px] mx-auto text-center">
           {/* Header Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.8, y: -20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ 
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1]
+            }}
             className="flex justify-center mb-4"
           >
-            <Button className=" w-52 text-sm font-medium bg-violet-950/30 text-violet-800 border border-violet-800 uppercase mb-12">
-              Dúvidas Gerais
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="left-0 w-[238px] h-[40px] bg-[rgba(120,97,255,0.05)] backdrop-blur-sm rounded-[8px] border border-[rgba(120,97,255,0.5)] uppercase text-[14px] font-medium text-[#7861FF] flex items-center px-[12px] mb-8 overflow-hidden"
+              aria-label="Pagamentos otimizados"
+              style={{
+                top: "calc(50% - 40px/2 - 116.6px)",
+                fontFamily: "'Montserrat Thin', sans-serif",
+                backdropFilter: "blur(4px)",
+                WebkitBackdropFilter: "blur(4px)",
+              }}
+            >
+              <span className="mx-auto">Dúvidas Gerais</span>
+            </motion.div>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className=" mx-autoflex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[68px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
+            transition={{ 
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className=" flex flex-col mx-auto font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
           >
             Perguntas Frequentes
           </motion.h2>
@@ -102,8 +152,12 @@ export const FaqPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-center mx-auto mb-16"
+            transition={{ 
+              duration: 0.7,
+              delay: 0.3,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-10 mt-4 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
           >
             Confira as respostas para as principais perguntas de quem deseja
@@ -112,16 +166,10 @@ export const FaqPage = () => {
 
           {/* FAQ Grid */}
           <motion.div
-            initial="hidden"
+            initial={shouldReduceMotion ? "visible" : "hidden"}
             whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
-                },
-              },
-            }}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
             className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26"
           >
             {faqData.map((item, index) => {
@@ -129,13 +177,10 @@ export const FaqPage = () => {
               return (
                 <motion.div
                   key={item.id ?? index}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  transition={{ duration: 0.5 }}
-                  whileHover={{ scale: 1.02 }}
-                  className="relative rounded-2xl bg-black transition-all"
+                  variants={itemVariants}
+                  custom={index}
+                  initial={shouldReduceMotion ? "visible" : undefined}
+                  className="relative rounded-2xl bg-black transition-all cursor-pointer"
                   style={{
                     boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
                     border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -148,7 +193,11 @@ export const FaqPage = () => {
                   >
                     {/* Number Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <div
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative inline-flex items-center justify-center h-7 px-4 rounded-full"
                         style={{
                           background:
@@ -159,54 +208,96 @@ export const FaqPage = () => {
                         <span className="font-medium text-[12px] leading-[16px] tracking-[-0.24px] text-[#7861FF]">
                           {item.number}
                         </span>
-                      </div>
+                      </motion.div>
 
                       {/* Plus/Minus Icon */}
                       <motion.div
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3 }}
+                        animate={{ 
+                          rotate: isOpen ? 135 : 0,
+                        }}
+                        transition={{ 
+                          duration: 0.4,
+                          ease: [0.16, 1, 0.3, 1]
+                        }}
                         className="flex items-center justify-center w-6 h-6"
                       >
-                        <svg
+                        <motion.svg
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
                         >
-                          <path
+                          <motion.path
                             d="M12 5V19M5 12H19"
                             stroke="#7861FF"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
+                            animate={{
+                              stroke: isOpen ? "#FFFFFF" : "#7861FF"
+                            }}
+                            transition={{ duration: 0.3 }}
                           />
-                        </svg>
+                        </motion.svg>
                       </motion.div>
                     </div>
 
                     {/* Divider */}
-                    <div className="h-[1px] bg-white/10 mb-4" />
+                    <motion.div 
+                      className="h-[1px] bg-white/10 mb-4"
+                      animate={{
+                        scaleX: isOpen ? 1 : 0.95,
+                        opacity: isOpen ? 1 : 0.5
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
 
                     {/* Question */}
-                    <p className="font-normal text-[18px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]">
+                    <motion.p 
+                      className="font-normal text-[18px] leading-[18px] tracking-[-0.28px] text-[#F3F3F3]"
+                      animate={{
+                        color: isOpen ? "#FFFFFF" : "#F3F3F3"
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {item.question}
-                    </p>
+                    </motion.p>
 
                     {/* Answer (when expanded) */}
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait">
                       {isOpen && item.answer && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
+                          initial={{ 
+                            height: 0, 
+                            opacity: 0,
+                            y: -10
+                          }}
+                          animate={{ 
+                            height: "auto", 
+                            opacity: 1,
+                            y: 0
+                          }}
+                          exit={{ 
+                            height: 0, 
+                            opacity: 0,
+                            y: -10
+                          }}
+                          transition={{ 
+                            duration: 0.4,
+                            ease: [0.16, 1, 0.3, 1]
+                          }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-4 pt-4 border-t border-white/10">
+                          <motion.div 
+                            className="mt-4 pt-4 border-t border-white/10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.1, duration: 0.3 }}
+                          >
                             <p className="font-normal text-[16px] leading-[22px] text-white/70">
                               {item.answer}
                             </p>
-                          </div>
+                          </motion.div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -218,44 +309,63 @@ export const FaqPage = () => {
 
           {/* CTA Button */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ 
+              duration: 0.7, 
+              delay: 0.5,
+              ease: [0.16, 1, 0.3, 1]
+            }}
             className="flex justify-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-lg flex items-center justify-center gap-3 group"
-              style={{
-                boxShadow:
-                  "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                border: "1px solid rgba(255, 255, 255, 0.5)",
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.7, 
+                ease: [0.16, 1, 0.3, 1]
               }}
+              className="flex justify-end "
             >
-              <span className="font-semibold text-[16px] leading-[19px] tracking-[-0.32px] text-white">
-                Fazer orçamento
-              </span>
-
-              {/* Arrow Icon */}
-              <motion.svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                whileHover={{ x: 4 }}
-                transition={{ duration: 0.2 }}
-              >
-                <path
-                  d="M5 12H19M19 12L12 5M19 12L12 19"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </motion.svg>
-            </motion.button>
+              <Button asChild>
+                <motion.button
+                  className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                  style={{
+                    boxShadow:
+                      "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0px 6px 50px rgba(120, 97, 255, 0.5), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 400, 
+                    damping: 17 
+                  }}
+                >
+                  <motion.span 
+                    className="font-medium text-[16px] text-white"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: -5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Fazer orçamento
+                  </motion.span>
+                  <motion.div
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </motion.div>
+                </motion.button>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </div>

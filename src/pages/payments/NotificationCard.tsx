@@ -27,7 +27,7 @@ const NotificationCard: FC<NotificationProps> = ({ title, message, time = "há 1
         <p className="mt-1 text-xs text-gray-300">{message}</p>
       </div>
       <time className="text-xs text-gray-400">{time}</time>
-    </article>
+    </motion.article>
   );
 };
 

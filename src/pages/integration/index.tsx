@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 export const IntegrationPage = () => {
@@ -45,7 +46,7 @@ export const IntegrationPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-              className="font-normal text-[24px] leading-7.5 mt-6 text-[rgba(255,255,255,0.7)]"
+              className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-16 mt-8 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Nossa API foi desenhada para ser intuitiva. Referências claras,
@@ -55,47 +56,27 @@ export const IntegrationPage = () => {
 
             {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={
-                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-              }
-              transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
-              className="mt-8"
+              className="mt-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             >
-              <Button
-                className="w-[280px] h-[52px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden"
-                style={{
-                  boxShadow:
-                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                  border: "1px solid rgba(255, 255, 255, 0.5)",
-                }}
-              >
-                <span
-                  className="text-[14px] leading-[17px] tracking-[-0.32px] font-semibold"
-                  style={{ fontFamily: "Montserrat, sans-serif" }}
+              <Button asChild>
+                <motion.button
+                  className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                  style={{
+                    boxShadow:
+                      "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  Fazer orçamento
-                </span>
-
-                {/* Arrow Icon */}
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-                {/* Border */}
-                <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
+                  <span className=" font-medium text-[16px] text-white">
+                    Fazer orçamento
+                  </span>
+                  <ArrowRight className="w-6 h-6 text-white" />
+                </motion.button>
               </Button>
             </motion.div>
           </motion.div>
@@ -165,10 +146,10 @@ export const IntegrationPage = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="absolute right-16 top-[178px] z-10 flex flex-col items-end"
+            className="absolute right-24 top-[178px] z-10 flex flex-col items-end"
           >
             {/* Heading */}
-            <h2 className="max-w-139 text-end flex flex-col font-neue-montreal font-bold text-[68px] leading-15.5 tracking-[-1.12px] text-white">
+            <h2 className=" flex flex-col max-w-[495px] text-end font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white">
               Integração sem dor de cabeça
             </h2>
 
@@ -177,7 +158,7 @@ export const IntegrationPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-              className="font-normal text-[24px] leading-7.5 mt-6  text-[rgba(255,255,255,0.7)] max-w-[625px]  text-right"
+              className="font-normal text-end max-w-[525px] tracking-[1.46px] text-[1.475rem] mb-10 mt-4 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Nossa API foi desenhada para ser intuitiva. Referências claras,
@@ -194,40 +175,21 @@ export const IntegrationPage = () => {
               transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
               className="flex justify-end "
             >
-              <Button
-                className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
-                style={{
-                  boxShadow:
-                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                  border: "1px solid rgba(255, 255, 255, 0.5)",
-                }}
-              >
-                <span
-                  className="text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
-                  style={{ fontFamily: "Montserrat, sans-serif" }}
+              <Button asChild>
+                <motion.button
+                  className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                  style={{
+                    boxShadow:
+                      "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  Fazer orçamento
-                </span>
-
-                {/* Arrow Icon */}
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-                {/* Border */}
-                <div className="absolute inset-0 border border-white/50 rounded-lg pointer-events-none" />
+                  <span className=" font-medium text-[16px] text-white">
+                    Fazer orçamento
+                  </span>
+                  <ArrowRight className="w-6 h-6 text-white" />
+                </motion.button>
               </Button>
             </motion.div>
           </motion.div>
