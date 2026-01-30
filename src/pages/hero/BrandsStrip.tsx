@@ -121,14 +121,16 @@ export const BrandsStrip = () => {
         <div
           className="absolute h-[76px] overflow-hidden"
           style={{
-            width: "150%",
-            left: "-25%",
-            background: "linear-gradient(90deg, #7861FF 0%, #B8AAFF 100%)",
-            transform: "rotate(5deg)",
+            width: "1997px",
+            left: "-25px",
+            height: "76px",
+            background:
+              "linear-gradient(90.01deg, #7861FF -0.12%, #7E68FF 50.05%, #7861FF 100.22%)",
+            transform: "rotate(4.6deg)",
             transformOrigin: "center",
             boxShadow:
-              "0px 4px 2px rgba(0, 0, 0, 0.25), 0px 4px 40px rgba(120, 97, 255, 0.3)",
-            filter: "blur(2px)",
+              "0px 4px 40px rgba(120, 97, 255, 0.3), 0px 4px 4px rgba(0, 0, 0, 0.25)",
+            filter: "blur(3.5px)",
           }}
         >
           <div
@@ -152,13 +154,14 @@ export const BrandsStrip = () => {
         <div
           className="absolute h-[76px] overflow-hidden"
           style={{
-            width: "150%",
-            left: "-25%",
-            background: "linear-gradient(90deg, #9681FF 0%, #D4C9FF 100%)",
-            transform: "rotate(-5deg)",
+            width: "1997px",
+            left: "-24.9px",
+            background:
+              "linear-gradient(90.01deg, #7861FF -0.12%, #7E68FF 50.05%, #7861FF 100.22%)",
+            transform: "rotate(-4.6deg)",
             transformOrigin: "center",
             boxShadow:
-              "0px 13px 7.35px rgba(0, 0, 0, 0.39), 0px 4px 40px rgba(120, 97, 255, 0.3)",
+              "0px 4px 40px rgba(120, 97, 255, 0.3), 0px 13px 14.7px rgba(0, 0, 0, 0.39)",
           }}
         >
           <div
