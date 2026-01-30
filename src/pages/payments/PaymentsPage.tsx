@@ -83,17 +83,17 @@ export const PaymentsPage = () => {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="relative w-[778px] h-[990px]">
+          <div className="relative w-[650px] h-[825px]">
             {/* Radial gradient background container */}
 
             {/* iPhone mockup - positioned at x: 209px, y: 121px */}
             <motion.figure
               className="absolute z-10 transform"
               style={{
-                left: "134px",
-                top: "22px",
-                width: "472px",
-                height: "632px",
+                left: "114px",
+                top: "19px",
+                width: "401px",
+                height: "537px",
                 transformOrigin: "center",
               }}
               initial={{ opacity: 0, y: 100 }}
@@ -104,7 +104,7 @@ export const PaymentsPage = () => {
               <img
                 src="/phone/iphone.png"
                 alt="Mockup de checkout em iPhone"
-                className="block w-[472px] h-[632px] object-contain md:scale-[1.25] lg:scale-[1.5] xl:scale-[1.7]"
+                className="block w-[401px] h-[537px] object-contain md:scale-[1.25] lg:scale-[1.5] xl:scale-[1.7]"
               />
             </motion.figure>
 
@@ -112,10 +112,10 @@ export const PaymentsPage = () => {
             <motion.div
               className="absolute z-40"
               style={{
-                left: "152px",
-                top: "517px",
-                width: "442.62px",
-                height: "192px",
+                left: "129px",
+                top: "440px",
+                width: "376.23px",
+                height: "163px",
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -148,10 +148,10 @@ export const PaymentsPage = () => {
             <motion.div
               className="absolute z-30"
               style={{
-                left: "180px",
-                top: "574px",
-                width: "381.77px",
-                height: "162px",
+                left: "153px",
+                top: "488px",
+                width: "324.5px",
+                height: "138px",
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -184,10 +184,10 @@ export const PaymentsPage = () => {
             <motion.div
               className="absolute z-20"
               style={{
-                left: "216px",
-                top: "634px",
-                width: "320.98px",
-                height: "106px",
+                left: "184px",
+                top: "539px",
+                width: "272.83px",
+                height: "90px",
               }}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
