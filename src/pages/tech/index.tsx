@@ -12,7 +12,7 @@ export const TechPage = () => {
 
   return (
     <main
-      className="min-h-screen bg-black py-24 md:py-32 px-4 md:px-8 relative overflow-hidden"
+      className="min-h-screen bg-black py-24 md:py-28 px-4 md:px-8 relative overflow-hidden"
       id="tech-page"
     >
       {/* Background Light Effect */}

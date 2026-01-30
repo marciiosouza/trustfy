@@ -7,7 +7,7 @@ const payments = "/payments/dollar-payments-onversion.png";
 export const PaymentsPage = () => {
   return (
     <section
-      className="py-16 px-6 lg:px-24 bg-black border-b border-zinc-700/50 w-full"
+      className="py-14  px-6 lg:px-24 bg-black border-b border-zinc-700/50 w-full"
       aria-labelledby="payments-heading"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

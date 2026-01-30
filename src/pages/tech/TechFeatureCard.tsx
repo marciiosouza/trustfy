@@ -1,5 +1,17 @@
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import type { ReactNode } from "react";
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 18, scale: 0.99 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { stiffness: 120, damping: 16 },
+  },
+};
 
 interface TechFeatureCardProps {
   title: string;
@@ -25,14 +37,18 @@ export const TechFeatureCard = ({
   const isPerformanceCard = title.includes("Estabilidade");
 
   return (
-    <article
+    <motion.article
+      layout
+      variants={cardVariants}
       className={cn(
         "relative overflow-hidden rounded-[27px]",
         "border-2 border-white/10",
         "transition-all duration-300 hover:border-white/20",
-        "h-[348px]",
+        "h-[348px] focus:outline-none",
         className,
       )}
+      role="button"
+      tabIndex={0}
     >
       {/* Background gradient */}
       <div
@@ -44,29 +60,55 @@ export const TechFeatureCard = ({
       />
 
       {/* Imagem de fundo/preview - acima do gradient */}
-      {image &&
-        // Performance card uses an <img> positioned to the right and centered vertically
-        (isPerformanceCard ? (
-          <img
-            src={image}
-            alt={title}
-            className="absolute right-26 top-1/2 -translate-y-1/2 w-[440px] max-w-[48%] object-contain z-[5] pointer-events-none"
-          />
-        ) : !isBrandCard ? (
-          <div
-            className={cn(
-              "absolute bg-no-repeat z-[5] inset-0 bg-cover  bg-center",
-              imagePosition === "right" ? "bg-right" : "bg-left",
-            )}
-            style={{ backgroundImage: `url(${image})` }}
-          />
-        ) : null)}
+      {image && (() => {
+        if (isPerformanceCard) {
+          return (
+            <motion.img
+              src={image}
+              alt={title}
+              className="absolute right-26 top-1/2 -translate-y-1/2 w-[440px] max-w-[48%] object-contain z-[5] pointer-events-none"
+              initial={{ opacity: 0, x: 60, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+              whileHover={{ x: -10, scale: 1.05 }}
+              aria-hidden={true}
+            />
+          );
+        }
+
+        if (!isBrandCard) {
+          return (
+            <motion.div
+              className={cn(
+                "absolute bg-no-repeat z-[5] inset-0 bg-cover  bg-center",
+                imagePosition === "right" ? "bg-right" : "bg-left",
+              )}
+              style={{ backgroundImage: `url(${image})` }}
+              initial={{ opacity: 0, x: imagePosition === "right" ? 40 : -40, scale: 1.1 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ 
+                scale: 1.08, 
+                x: imagePosition === "right" ? 10 : -10 
+              }}
+            />
+          );
+        }
+
+        return null;
+      })()}
 
       {/* Ícone no topo (top-right for normal) */}
       {icon && !image && !isBrandCard && (
-        <div className="absolute top-6 right-6 text-6xl z-20">
+        <motion.div 
+          className="absolute top-6 right-6 text-6xl z-20"
+          initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          whileHover={{ scale: 1.15, rotate: -5 }}
+        >
           {typeof icon === "string" ? icon : icon}
-        </div>
+        </motion.div>
       )}
 
       {/* Conteúdo de texto */}
@@ -82,7 +124,13 @@ export const TechFeatureCard = ({
       >
         {isBrandCard ? (
           <div className="flex flex-col items-start">
-            <div className="mx-auto mb-8 w-[92px] h-[104px] flex">
+            <motion.div 
+              className="mx-auto mb-8 w-[92px] h-[104px] flex"
+              initial={{ opacity: 0, y: 20, rotate: -10 }}
+              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+            >
               {image ? (
                 <img
                   src={image}
@@ -96,7 +144,7 @@ export const TechFeatureCard = ({
                   icon
                 )
               ) : null}
-            </div>
+            </motion.div>
 
             <h3
               className="font-bold text-white mb-[19px]"
@@ -153,6 +201,6 @@ export const TechFeatureCard = ({
           </div>
         )}
       </div>
-    </article>
+    </motion.article>
   );
 };
