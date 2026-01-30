@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, cubicBezier } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 interface FAQItem {
@@ -67,7 +67,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: (i = 0) => ({
+  hidden: () => ({
     opacity: 0,
     y: 28,
     scale: 0.995,
@@ -78,7 +78,7 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1],
+      ease: cubicBezier(0.16, 1, 0.3, 1),
       delay: i * 0.04,
     },
   }),

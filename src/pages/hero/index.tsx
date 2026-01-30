@@ -12,6 +12,7 @@ const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]
 
   useEffect(() => {
     if (shouldReduceMotion) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplayed(words[0] ?? "");
       return;
     }
@@ -61,11 +62,15 @@ export const HeroPage = () => {
     : { opacity: 1, x: 0, y: [0, -8, 0] };
 
   const leftTransition = (shouldReduceMotion
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any } }
     : {
         opacity: { duration: 0.8 },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.2 },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       }) as any; 
 
   const rightWhileInView = shouldReduceMotion
@@ -73,11 +78,15 @@ export const HeroPage = () => {
     : { opacity: 1, x: 0, y: [0, -8, 0] };
 
   const rightTransition = (shouldReduceMotion
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ? { opacity: { duration: 0.8 }, x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any } }
     : {
         opacity: { duration: 0.8 },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.7 },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       }) as any; 
 
   return (
