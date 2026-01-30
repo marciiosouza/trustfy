@@ -13,7 +13,7 @@ export const Footer = () => {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -34,37 +34,37 @@ export const Footer = () => {
               <nav className="flex flex-col gap-2">
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   Vantagens
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   Tecnologia
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   Personalização
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   Integrações
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   Área do Desenvolvedor
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF]"
+                  className="text-white font-medium hover:text-[#7861FF]"
                 >
                   FAQ
                 </a>
@@ -79,13 +79,13 @@ export const Footer = () => {
               <div className="flex flex-col gap-2">
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF] text-left"
+                  className="text-white font-medium hover:text-[#7861FF] text-left"
                 >
                   Política de privacidade
                 </a>
                 <a
                   href="#"
-                  className="text-white font-semibold hover:text-[#7861FF] text-left"
+                  className="text-white font-medium hover:text-[#7861FF] text-left"
                 >
                   Política de segurança
                 </a>
@@ -123,7 +123,7 @@ export const Footer = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="font-semibold">Instagram</span>
+                <span className="font-medium">Instagram</span>
               </a>
             </div>
           </div>
