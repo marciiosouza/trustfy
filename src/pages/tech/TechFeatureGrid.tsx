@@ -27,7 +27,7 @@ export const TechFeatureGrid = ({ features }: TechFeatureGridProps) => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.15 }}
-      className="flex flex-col gap-5 mb-16 md:mb-20 z-3"
+      className="flex flex-col gap-5 mb-16 md:mb-20 z-3 mt-32"
     >
       {/* item variants for children so stagger works even when layout uses nested grids */}
       {/**/}

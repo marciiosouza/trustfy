@@ -32,7 +32,7 @@ export const TECH_FEATURES: TechFeature[] = [
     id: "pix-card-boleto",
     title: "Pix: Gestão e Boleto Híbrido",
     description:
-      "Não limite seus clientes. Ofereça Pix, cartão e boleto com total controle e gestão unificada dos pagamentos.",
+      "Não limite seus clientes. Ofereça as formas de pagamento mais usadas do mercado em um checkout único, transparente e otimizado para conversão.",
     variant: "large",
     image: "/cards/cards-04.png",
     imagePosition: "right",
