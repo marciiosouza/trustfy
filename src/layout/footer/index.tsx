@@ -34,37 +34,37 @@ export const Footer = () => {
               <nav className="flex flex-col gap-2">
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   Vantagens
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   Tecnologia
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   Personalização
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   Integrações
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   Área do Desenvolvedor
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF]"
+                  className="text-white font-regular hover:text-[#7861FF]"
                 >
                   FAQ
                 </a>
@@ -73,19 +73,19 @@ export const Footer = () => {
 
             {/* Transparência Column */}
             <div className="min-w-[160px]">
-              <p className="font-manrope font-medium text-sm text-[#848484] mb-3">
+              <p className="font-manrope font-regular text-sm text-[#848484] mb-3">
                 Transparência
               </p>
               <div className="flex flex-col gap-2">
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF] text-left"
+                  className="text-white font-regular hover:text-[#7861FF] text-left"
                 >
                   Política de privacidade
                 </a>
                 <a
                   href="#"
-                  className="text-white font-medium hover:text-[#7861FF] text-left"
+                  className="text-white font-regular hover:text-[#7861FF] text-left"
                 >
                   Política de segurança
                 </a>
@@ -94,7 +94,7 @@ export const Footer = () => {
 
             {/* Redes Sociais Column */}
             <div className="min-w-[140px]">
-              <p className="font-manrope font-medium text-sm text-[#848484] mb-3">
+              <p className="font-manrope font-regular text-sm text-[#848484] mb-3">
                 Redes sociais
               </p>
               <a
@@ -123,7 +123,7 @@ export const Footer = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="font-medium">Instagram</span>
+                <span className="font-regular">Instagram</span>
               </a>
             </div>
           </div>
