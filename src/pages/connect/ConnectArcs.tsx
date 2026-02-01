@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 import { ARCS_CONFIG } from "./constants";
 
 interface ConnectArcsProps {
@@ -9,10 +10,21 @@ interface ConnectArcsProps {
 
 export const ConnectArcs = memo(
   ({ className = "", isInView = false }: ConnectArcsProps) => {
+    const isMobile = !useMediaQuery("(min-width: 768px)");
     const viewBoxWidth = 890;
     const viewBoxHeight = 746;
     const centerX = 445;
     const centerY = 480;
+
+    // Função para criar um arco (semi-círculo superior)
+    const createArcPath = (radius: number) => {
+      const startX = centerX - radius;
+      const startY = centerY;
+      const endX = centerX + radius;
+      const endY = centerY;
+      
+      return `M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`;
+    };
 
     return (
       <svg
@@ -72,18 +84,17 @@ export const ConnectArcs = memo(
         </defs>
 
         {ARCS_CONFIG.map((config, index) => (
-          <motion.circle
+          <motion.path
             key={index}
-            cx={centerX}
-            cy={centerY}
-            r={config.radius}
+            d={createArcPath(config.radius)}
             fill="none"
             stroke={`url(#gradient${index + 1})`}
-            strokeWidth={config.strokeWidth}
+            strokeWidth={isMobile ? 3 : config.strokeWidth}
+            strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={
               isInView
-                ? { pathLength: 1, opacity: 1 }
+                ? { pathLength: 1, opacity: config.opacity }
                 : { pathLength: 0, opacity: 0 }
             }
             transition={{
@@ -97,6 +108,7 @@ export const ConnectArcs = memo(
                 delay: 0.3 + index * 0.2,
               },
             }}
+            style={{ vectorEffect: "non-scaling-stroke" }}
           />
         ))}
       </svg>

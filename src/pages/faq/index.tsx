@@ -142,7 +142,7 @@ export const FaqPage = () => {
               delay: 0.15,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className=" flex flex-col mx-auto font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
+            className=" flex flex-col mx-auto font-neue-montreal font-bold text-[2rem] leading-[1.15] md:text-[65px] md:leading-15.5 tracking-[-1.12px] text-white"
           >
             Perguntas Frequentes
           </motion.h2>
@@ -157,7 +157,7 @@ export const FaqPage = () => {
               delay: 0.3,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-10 mt-4 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
+            className="font-normal mx-auto max-w-[674px] tracking-[0.5px] text-[15px] leading-relaxed mb-10 mt-2 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
           >
             Confira as respostas para as principais perguntas de quem deseja
@@ -317,32 +317,24 @@ export const FaqPage = () => {
               delay: 0.5,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="flex justify-center"
+            className="flex justify-center mt-14"
           >
-            <motion.div
-              className="mt-14"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            >
-              <Button asChild>
-                <motion.button
-                  className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
-                  style={{
-                    boxShadow:
-                      "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <span className=" font-medium text-[16px] text-white">
-                    Fazer orçamento
-                  </span>
-                  <ArrowRight className="w-6 h-6 text-white" />
-                </motion.button>
-              </Button>
-            </motion.div>
+            <Button asChild>
+              <motion.button
+                className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                style={{
+                  boxShadow:
+                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <span className=" font-medium text-[16px] text-white">
+                  Fazer orçamento
+                </span>
+                <ArrowRight className="w-6 h-6 text-white" />
+              </motion.button>
+            </Button>
           </motion.div>
         </div>
       </div>

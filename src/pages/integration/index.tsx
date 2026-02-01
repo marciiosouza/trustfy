@@ -37,7 +37,7 @@ export const IntegrationPage = () => {
             className="flex flex-col items-center text-center px-4"
           >
             {/* Heading */}
-            <h2 className="font-neue-montreal font-bold text-[2.5rem] leading-[1.2] tracking-[-1.12px] text-white">
+            <h2 className="font-neue-montreal font-bold text-[2rem] leading-[1.15] tracking-[-1.12px] text-white max-w-[350px]">
               Integração sem dor de cabeça
             </h2>
 
@@ -46,39 +46,39 @@ export const IntegrationPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-              className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-16 mt-8 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
+              className="font-normal mx-auto max-w-[674px] tracking-[0.5px] text-[15px] leading-relaxed mb-16 mt-2 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             >
               Nossa API foi desenhada para ser intuitiva. Referências claras,
               exemplos de código reais e tudo o que seu time técnico precisa
               para rodar em minutos.
             </motion.p>
+          </motion.div>
 
-            {/* CTA Button */}
-            <motion.div
-              className="mt-14"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            >
-              <Button asChild>
-                <motion.button
-                  className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
-                  style={{
-                    boxShadow:
-                      "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <span className=" font-medium text-[16px] text-white">
-                    Fazer orçamento
-                  </span>
-                  <ArrowRight className="w-6 h-6 text-white" />
-                </motion.button>
-              </Button>
-            </motion.div>
+          {/* CTA Button - Full Width */}
+          <motion.div
+            className="w-full -mx-4 px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          >
+            <Button asChild>
+              <motion.button
+                className="relative w-full h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+                style={{
+                  boxShadow:
+                    "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <span className=" font-medium text-[16px] text-white">
+                  Fazer orçamento
+                </span>
+                <ArrowRight className="w-6 h-6 text-white" />
+              </motion.button>
+            </Button>
           </motion.div>
         </div>
 

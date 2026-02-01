@@ -43,7 +43,7 @@ export const PersonalyPage = () => {
         <header className="mb-8">
           <motion.h2
             id="personaly-heading"
-            className=" flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white"
+            className=" flex flex-col font-neue-montreal font-bold text-[2rem] leading-[1.15] md:text-[65px] md:leading-15.5 tracking-[-1.12px] text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,7 +52,7 @@ export const PersonalyPage = () => {
             Design 100% Sob Medida
           </motion.h2>
           <motion.p
-            className="font-normal mx-auto max-w-[674px] tracking-[1.46px] text-[1.475rem] mb-16 mt-8 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
+            className="font-normal mx-auto max-w-[674px] tracking-[0.5px] text-[15px] leading-relaxed md:text-[22px] md:leading-7.5  text-[rgba(255,255,255,0.7)] mt-2 md:mt-8 mb-16"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export const PersonalyPage = () => {
         >
           <Button asChild>
             <motion.button
-              className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
+              className="relative w-full md:w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
               style={{
                 boxShadow:
                   "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",

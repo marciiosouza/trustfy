@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mx-auto md:mx-0">
             <img
               src="/logo.svg"
               alt="Trustify Logo"
@@ -25,7 +25,7 @@ export const Footer = () => {
           </div>
 
           {/* Columns */}
-          <div className="flex flex-col sm:flex-row gap-8 md:ml-auto sm:justify-between items-start">
+          <div className="flex flex-col sm:flex-row gap-8 md:ml-auto sm:justify-between items-center md:items-start">
             {/* Navegue Column */}
             <div className="min-w-[160px]">
               <p className="font-manrope font-medium text-sm text-[#848484] mb-3">

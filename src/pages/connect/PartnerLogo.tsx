@@ -35,11 +35,11 @@ export const PartnerLogo = memo(
         <img
           src={logo}
           alt={name}
+          className="object-contain cursor-pointer w-[50%] md:w-auto h-auto"
           style={{
-            width: `${size.width}px`,
-            height: `${size.height}px`,
+            maxWidth: `${size.width}px`,
+            maxHeight: `${size.height}px`,
           }}
-          className="object-contain cursor-pointer"
         />
       </motion.div>
     );
