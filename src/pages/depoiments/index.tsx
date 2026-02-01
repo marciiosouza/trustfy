@@ -42,12 +42,13 @@ export const DepoimentsPage = () => {
     <section className="relative w-full min-h-[500px] md:h-[368px] bg-black overflow-hidden">
       {/* Mobile Layout */}
       <div className="flex flex-col items-center px-6 py-10 md:hidden">
-        {/* Heading - Top on Mobile */}
-        <h2 className=" flex flex-col font-neue-montreal font-bold text-[2.5rem] md:text-[65px] leading-[1.2] md:leading-15.5 tracking-[-1.12px] text-white">
-          Depoimentos de Clientes
+        {/* Title - above, styled like Hero mobile */}
+        <h2 className="max-w-[482px] flex flex-col font-neue-montreal font-bold text-[2rem] leading-[1.15] tracking-[-0.02em] text-center text-white">
+          <span>Depoimentos de</span>
+          <span>Clientes</span>
         </h2>
 
-        {/* Animated Content - All Together */}
+        {/* Animated Content - Testimonial below the title */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`testimonial-mobile-${currentTestimonial.id}`}
@@ -55,36 +56,28 @@ export const DepoimentsPage = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -100, opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center mt-6"
           >
-            {/* Testimonial Text with Quotes */}
-            <div className="relative w-full max-w-[340px] mb-8">
-              {/* Quote Icon - Left */}
+            {/* Testimonial Text - show both quotes (left/top and right/bottom) */}
+            <div className="w-full max-w-[340px] mb-6 relative px-4 py-8">
               <img
                 src="/cards/aspas-left.png"
                 alt="Opening quote"
-                className="w-[30px] h-[30px] object-contain absolute -top-2 -left-2"
+                className="w-9 h-9 absolute -top-3 -left-3 object-contain opacity-90 pointer-events-none"
               />
-
-              <p
-                className="font-normal mx-auto max-w-[966px] tracking-[1.46px] text-[1.475rem] mb-16 mt-8 md:text-[22px] leading-7.5  text-[rgba(255,255,255,0.7)]"
-                style={{ fontFamily: "'PP Neue Montreal', sans-serif " }}
-              >
-                {currentTestimonial.text}
-              </p>
-
-              {/* Quote Icon - Right */}
               <img
                 src="/cards/aspas-right.png"
                 alt="Closing quote"
-                className="w-[30px] h-[30px] object-contain absolute -bottom-2 -right-2"
+                className="w-9 h-9 absolute -bottom-3 -right-3 object-contain opacity-90 pointer-events-none"
               />
+              <p className="font-neue-montreal text-[16px] leading-7 text-[rgba(255,255,255,0.7)]">
+                {currentTestimonial.text}
+              </p>
             </div>
 
-            {/* Profile Section - Bottom on Mobile */}
-            <div className="flex flex-col items-center">
-              {/* Profile Image with Border */}
-              <div className="w-[120px] h-[120px] border-2 border-white rounded-[24px] box-border overflow-hidden mb-3">
+            {/* Profile Section - mobile: compact horizontal */}
+            <div className="flex items-center gap-4 mt-6">
+              <div className="w-[72px] h-[72px] border-2 border-white rounded-[16px] overflow-hidden">
                 <img
                   src={currentTestimonial.image}
                   alt="Profile"
@@ -92,12 +85,11 @@ export const DepoimentsPage = () => {
                 />
               </div>
 
-              {/* Name and Company */}
-              <div className="text-center">
-                <p className="font-medium text-[18px] leading-[24px] text-white mb-2">
+              <div className="text-left">
+                <p className="font-medium text-[16px] leading-[20px] text-white">
                   {currentTestimonial.name}
                 </p>
-                <p className="font-rubik font-light text-[14px] leading-[20px] text-white">
+                <p className="font-rubik font-light text-[14px] leading-[20px] text-white/80">
                   {currentTestimonial.company}
                 </p>
               </div>

@@ -38,19 +38,18 @@ export const TechPage = () => {
 
         <TechFeatureGrid features={TECH_FEATURES} />
 
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center px-4">
           <Button
             onClick={handleCTAClick}
             aria-label={TECH_CONTENT.cta.ariaLabel}
-            className="w-[319px] h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
+            className="w-full md:w-[319px] h-[56px] md:h-[60px] bg-[#7861FF] hover:bg-[#6951EE] text-white rounded-[8px] relative overflow-hidden mt-[48px]"
             style={{
               boxShadow:
                 "0px 4px 40px rgba(120, 97, 255, 0.3), inset 0px 4px 24px rgba(255, 255, 255, 0.3)",
-              border: "1px solid rgba(255, 255, 255, 0.5)",
             }}
           >
             <span
-              className="flex  items-center justify-center gap-2 text-[16px] leading-[19px] tracking-[-0.32px] font-semibold"
+              className="flex items-center justify-center gap-2 text-[16px] leading-[19px] tracking-[-0.32px] font-medium"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               {TECH_CONTENT.cta.text}
