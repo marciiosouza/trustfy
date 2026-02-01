@@ -6,6 +6,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Tipografia - design system */
+  --font-neue-montreal: 'PP Neue Montreal', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-krona: 'Krona One', sans-serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

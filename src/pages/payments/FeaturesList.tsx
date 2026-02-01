@@ -36,7 +36,7 @@ const features = [
 const FeaturesList: FC = () => {
   return (
     <ul
-      className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-6 mt-6 md:mt-6"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 md:mt-6"
       role="list"
       aria-label="Recursos"
     >
@@ -49,7 +49,7 @@ const FeaturesList: FC = () => {
             <img
               src={f.icon}
               alt={f.title}
-              className="w-16 h-16 md:w-12 md:h-12 object-contain"
+              className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain shrink-0"
             />
           }
         />

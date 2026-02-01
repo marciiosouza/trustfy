@@ -1,11 +1,11 @@
-const Logo = () => (
+const Logo = ({ className = "" }: { className?: string }) => (
   <svg
     width="192"
     height="36"
     viewBox="0 0 192 36"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="h-8 w-auto"
+    className={`h-6 md:h-8 w-auto ${className}`}
   >
     <g clipPath="url(#clip0_548_1354)">
       <path
@@ -94,7 +94,13 @@ const Logo = () => (
   </svg>
 );
 
-export const BrandsStrip = () => {
+type BrandsStripProps = {
+  variant?: "desktop" | "mobile";
+};
+
+export const BrandsStrip = ({ variant = "desktop" }: BrandsStripProps) => {
+  const isMobile = variant === "mobile";
+
   return (
     <>
       <style>{`
@@ -116,14 +122,17 @@ export const BrandsStrip = () => {
         }
       `}</style>
 
-      <div className="absolute left-0 top-[1143px] w-full h-[270px] overflow-visible flex items-center justify-center">
+      <div
+        className={
+          isMobile
+            ? "relative left-0 top-0 w-full h-[180px] overflow-visible flex items-center justify-center"
+            : "absolute left-0 top-[1143px] w-full h-[270px] overflow-visible flex items-center justify-center"
+        }
+      >
         {/* Primeira faixa diagonal - inclinada para direita (cima esquerda para baixo direita) */}
         <div
-          className="absolute h-[76px] overflow-hidden"
+          className={`absolute overflow-hidden ${isMobile ? "h-[56px] w-[150vw] -left-[25%]" : "h-[76px] w-[1997px] left-[-25px]"}`}
           style={{
-            width: "1997px",
-            left: "-25px",
-            height: "76px",
             background:
               "linear-gradient(90.01deg, #7861FF -0.12%, #7E68FF 50.05%, #7861FF 100.22%)",
             transform: "rotate(4.6deg)",
@@ -134,7 +143,7 @@ export const BrandsStrip = () => {
           }}
         >
           <div
-            className="flex items-center gap-8 h-full absolute"
+            className={`flex items-center h-full absolute ${isMobile ? "gap-4" : "gap-8"}`}
             style={{
               animation: "scrollBrand1 40s linear infinite",
               width: "200%",
@@ -152,10 +161,8 @@ export const BrandsStrip = () => {
 
         {/* Segunda faixa diagonal - inclinada para esquerda (baixo esquerda para cima direita) */}
         <div
-          className="absolute h-[76px] overflow-hidden"
+          className={`absolute overflow-hidden ${isMobile ? "h-[56px] w-[150vw] -left-[25%]" : "h-[76px] w-[1997px] left-[-24.9px]"}`}
           style={{
-            width: "1997px",
-            left: "-24.9px",
             background:
               "linear-gradient(90.01deg, #7861FF -0.12%, #7E68FF 50.05%, #7861FF 100.22%)",
             transform: "rotate(-4.6deg)",
@@ -165,7 +172,7 @@ export const BrandsStrip = () => {
           }}
         >
           <div
-            className="flex items-center gap-8 h-full absolute"
+            className={`flex items-center h-full absolute ${isMobile ? "gap-4" : "gap-8"}`}
             style={{
               animation: "scrollBrand2 40s linear infinite",
               width: "200%",

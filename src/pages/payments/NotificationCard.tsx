@@ -17,16 +17,16 @@ const NotificationCard: FC<NotificationProps> = ({ title, message, time = "há 1
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       whileHover={{ x: 5, scale: 1.02 }}
     >
-      <div className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center" aria-hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-md bg-white/10 flex items-center justify-center shrink-0" aria-hidden>
+        <svg className="w-[14px] h-[14px] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2v20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
       <div className="flex-1">
-        <p className="text-sm font-semibold">{title}</p>
-        <p className="mt-1 text-xs text-gray-300">{message}</p>
+        <p className="font-neue-montreal text-sm font-medium leading-tight">{title}</p>
+        <p className="mt-1 font-montserrat text-xs font-normal leading-relaxed text-white/70">{message}</p>
       </div>
-      <time className="text-xs text-gray-400">{time}</time>
+      <time className="font-montserrat text-xs font-normal text-white/50">{time}</time>
     </motion.article>
   );
 };
