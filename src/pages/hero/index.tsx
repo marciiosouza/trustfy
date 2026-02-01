@@ -159,6 +159,7 @@ export const HeroPage = () => {
             <h1 className="max-w-[982px] mx-auto flex flex-col font-neue-montreal text-[72px] leading-[67.2px] text-center tracking-[-1.12px] text-white">
               <span className="font-regular"> Deixe de ser cliente,</span>
               <span className="font-bold">
+                
                 <Typewriter
                   words={["Vire dono de Gateway"]}
                   typingSpeed={160}
