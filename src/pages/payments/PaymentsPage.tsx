@@ -87,10 +87,17 @@ export const PaymentsPage = () => {
               viewport={{ amount: 0.2 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
             >
-              <img
+              <motion.img
                 src="/phone/iphone.png"
                 alt="Mockup de checkout em iPhone"
                 className="block w-full h-full object-contain md:scale-[1.25] lg:scale-[1.5] xl:scale-[1.7]"
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.45,
+                }}
               />
             </motion.figure>
 
@@ -104,11 +111,11 @@ export const PaymentsPage = () => {
                 scale: [1, 1.03, 1],
               }}
               transition={{
-                duration: 0.35,
+                duration: 0.6,
                 delay: 0.6,
                 ease: "easeOut",
                 scale: {
-                  duration: 0.9,
+                  duration: 2.0,
                   repeat: Infinity,
                   repeatType: "loop",
                   delay: 0.7,
@@ -132,11 +139,11 @@ export const PaymentsPage = () => {
                 scale: [1, 1.03, 1],
               }}
               transition={{
-                duration: 0.35,
+                duration: 0.6,
                 delay: 0.75,
                 ease: "easeOut",
                 scale: {
-                  duration: 0.9,
+                  duration: 2.0,
                   repeat: Infinity,
                   repeatType: "loop",
                   delay: 0.9,
@@ -160,11 +167,11 @@ export const PaymentsPage = () => {
                 scale: [1, 1.03, 1],
               }}
               transition={{
-                duration: 0.35,
+                duration: 0.6,
                 delay: 0.9,
                 ease: "easeOut",
                 scale: {
-                  duration: 0.9,
+                  duration: 2.0,
                   repeat: Infinity,
                   repeatType: "loop",
                   delay: 1.0,

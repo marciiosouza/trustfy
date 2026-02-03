@@ -132,7 +132,7 @@ export const Footer = () => {
         {/* Divider & Copyright */}
         <div className="mt-8 border-t border-[rgba(242,242,242,0.1)] pt-6 text-center">
           <p className="font-neue font-medium text-[14px] text-[#848484]">
-            © 2026 Trustfy | CNPJ: 00.000.000/0000-00
+            © 2026 Trustfy | CNPJ: 63.271.517/0001-35
           </p>
         </div>
       </div>

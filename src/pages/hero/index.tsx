@@ -5,7 +5,15 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 
-const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]; typingSpeed?: number; pause?: number; }) => {
+const Typewriter = ({
+  words,
+  typingSpeed = 70,
+  pause = 1200,
+}: {
+  words: string[];
+  typingSpeed?: number;
+  pause?: number;
+}) => {
   const shouldReduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -21,13 +29,19 @@ const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]
     const full = words[index] ?? "";
     if (!isDeleting) {
       if (displayed.length < full.length) {
-        timeout = window.setTimeout(() => setDisplayed(full.slice(0, displayed.length + 1)), typingSpeed);
+        timeout = window.setTimeout(
+          () => setDisplayed(full.slice(0, displayed.length + 1)),
+          typingSpeed,
+        );
       } else {
         timeout = window.setTimeout(() => setIsDeleting(true), pause);
       }
     } else {
       if (displayed.length > 0) {
-        timeout = window.setTimeout(() => setDisplayed(full.slice(0, displayed.length - 1)), Math.max(20, typingSpeed / 2));
+        timeout = window.setTimeout(
+          () => setDisplayed(full.slice(0, displayed.length - 1)),
+          Math.max(20, typingSpeed / 2),
+        );
       } else {
         setIsDeleting(false);
         setIndex((i) => (i + 1) % words.length);
@@ -38,7 +52,15 @@ const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]
         clearTimeout(timeout);
       }
     };
-  }, [displayed, isDeleting, index, words, typingSpeed, pause, shouldReduceMotion]);
+  }, [
+    displayed,
+    isDeleting,
+    index,
+    words,
+    typingSpeed,
+    pause,
+    shouldReduceMotion,
+  ]);
 
   return (
     <span>
@@ -46,7 +68,10 @@ const Typewriter = ({ words, typingSpeed = 70, pause = 1200 }: { words: string[]
       <motion.span
         aria-hidden
         animate={shouldReduceMotion ? {} : { opacity: [0, 1] }}
-        transition={{ repeat: shouldReduceMotion ? 0 : Infinity, duration: 0.7 }}
+        transition={{
+          repeat: shouldReduceMotion ? 0 : Infinity,
+          duration: 0.7,
+        }}
         className="ml-1"
       >
         |
@@ -71,31 +96,51 @@ export const HeroPage = () => {
     ? { opacity: 1, y: 0 }
     : { opacity: 1, x: 0, y: [0, -288, 0] };
 
-  const leftTransition = (useSimpleAnimations
-    ? fadeInTransition
-    : {
-        opacity: { duration: 0.8 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.2 },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      }) as any;
+  const leftTransition = (
+    useSimpleAnimations
+      ? fadeInTransition
+      : {
+          opacity: { duration: 0.8 },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          x: { duration: 0.8  , ease: [0.25, 0.1, 0.25, 1] as any },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          y: {
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse" as const,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ease: "easeInOut" as any,
+            delay: 0.2,
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ) as any;
 
   const rightWhileInView = useSimpleAnimations
     ? { opacity: 1, y: 0 }
     : { opacity: 1, x: 0, y: [0, 288, 0] };
 
-  const rightTransition = (useSimpleAnimations
-    ? fadeInTransition
-    : {
-        opacity: { duration: 0.8 },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        y: { duration: 2.6, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as any, delay: 0.7 },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      }) as any;
+  const rightTransition = (
+    useSimpleAnimations
+      ? fadeInTransition
+      : {
+          opacity: { duration: 0.8 },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          x: { duration: 10, ease: [0.25, 0.1, 0.25, 1] as any },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          y: {
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse" as const,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ease: "easeInOut" as any,
+            delay: 0.7,
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ) as any;
 
   return (
     <section className="relative w-full bg-black overflow-hidden min-h-[1100px] md:min-h-0">
@@ -159,7 +204,6 @@ export const HeroPage = () => {
             <h1 className="max-w-[982px] mx-auto flex flex-col font-neue-montreal text-[72px] leading-[67.2px] text-center tracking-[-1.12px] text-white">
               <span className="font-regular"> Deixe de ser cliente,</span>
               <span className="font-bold">
-                
                 <Typewriter
                   words={["Vire dono de Gateway"]}
                   typingSpeed={160}
@@ -391,11 +435,7 @@ export const HeroPage = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <img
-                src="/dollars.png"
-                alt=""
-                className="w-12 h-12 shrink-0"
-              />
+              <img src="/dollars.png" alt="" className="w-12 h-12 shrink-0" />
               <div className="text-left min-w-0">
                 <h3
                   className="font-normal text-[16px] leading-tight tracking-[-0.32px] text-white"
@@ -416,13 +456,13 @@ export const HeroPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
-              <img
-                src="/paint.png"
-                alt=""
-                className="w-12 h-12 shrink-0"
-              />
+              <img src="/paint.png" alt="" className="w-12 h-12 shrink-0" />
               <div className="text-left min-w-0">
                 <h3
                   className="font-normal text-[16px] leading-tight tracking-[-0.32px] text-white"
@@ -446,10 +486,17 @@ export const HeroPage = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <img
+              <motion.img
                 src="/macbook-lp.png"
                 alt="MacBook Preview"
                 className="w-full h-auto max-h-[400px] object-contain"
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.8,
+                }}
               />
             </motion.div>
             <div className="-mt-20 w-full">

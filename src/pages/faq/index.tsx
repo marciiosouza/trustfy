@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion, cubicBezier } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 interface FAQItem {
@@ -55,34 +55,7 @@ const faqData: FAQItem[] = [
   },
 ];
 
-// Motion variants: container for staggering and items with index-based delays
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: () => ({
-    opacity: 0,
-    y: 28,
-    scale: 0.995,
-  }),
-  visible: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: cubicBezier(0.16, 1, 0.3, 1),
-      delay: i * 0.04,
-    },
-  }),
-};
+// Animation variants removed as we now use scroll-based animations
 
 export const FaqPage = () => {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
@@ -165,21 +138,16 @@ export const FaqPage = () => {
           </motion.p>
 
           {/* FAQ Grid */}
-          <motion.div
-            initial={shouldReduceMotion ? "visible" : "hidden"}
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={containerVariants}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-26">
             {faqData.map((item, index) => {
               const isOpen = openItems.has(item.id);
               return (
                 <motion.div
                   key={item.id ?? index}
-                  variants={itemVariants}
-                  custom={index}
-                  initial={shouldReduceMotion ? "visible" : undefined}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
+                  whileInView={shouldReduceMotion ? {} : { opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                   className="relative rounded-2xl bg-black transition-all cursor-pointer"
                   style={{
                     boxShadow: "inset 0px 4px 16px rgba(120, 97, 255, 0.2)",
@@ -305,7 +273,7 @@ export const FaqPage = () => {
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
 
           {/* CTA Button */}
           <motion.div

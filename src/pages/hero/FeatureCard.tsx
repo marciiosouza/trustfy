@@ -36,6 +36,7 @@ export const FeatureCard = ({
     >
       <motion.div
         className={`${baseClasses} ${border} text-white`}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         style={shadow as any}
         whileHover={{
           scale: 1.05,
