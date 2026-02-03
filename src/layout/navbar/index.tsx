@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import QuoteButton, { QUOTE_TEXT, QUOTE_LINK } from "@/components/ui/QuoteButton";
+import QuoteButton, {
+  QUOTE_TEXT,
+  QUOTE_LINK,
+} from "@/components/ui/QuoteButton";
 import { Menu, X } from "lucide-react";
 import whatsapp from "/public/whatsapp.svg";
 

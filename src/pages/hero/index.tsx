@@ -104,8 +104,8 @@ export const HeroPage = () => {
       : {
           opacity: { duration: 0.8 },
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          x: { duration: 0.8  , ease: [0.25, 0.1, 0.25, 1] as any },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as any },
+
           y: {
             duration: 10,
             repeat: Infinity,
@@ -114,10 +114,8 @@ export const HeroPage = () => {
             ease: "easeInOut" as any,
             delay: 0.2,
           },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ) as any;
+  ) as any; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   const rightWhileInView = useSimpleAnimations
     ? { opacity: 1, y: 0 }
@@ -130,7 +128,7 @@ export const HeroPage = () => {
           opacity: { duration: 0.8 },
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           x: { duration: 10, ease: [0.25, 0.1, 0.25, 1] as any },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
           y: {
             duration: 10,
             repeat: Infinity,
@@ -139,10 +137,8 @@ export const HeroPage = () => {
             ease: "easeInOut" as any,
             delay: 0.7,
           },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ) as any;
+  ) as any; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   return (
     <section className="relative w-full bg-black overflow-hidden min-h-[1100px] md:min-h-0">

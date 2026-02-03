@@ -18,12 +18,20 @@ export const QuoteButton = ({
 }: QuoteButtonProps) => {
   // If children are provided, respect them (useful for motion wrappers or custom markup)
   if (children) {
-    return <Button asChild {...props}>{children}</Button>;
+    return (
+      <Button asChild {...props}>
+        {children}
+      </Button>
+    );
   }
 
   return (
     <Button asChild {...props}>
-      <a href={href} aria-label={QUOTE_ARIA} className="inline-flex items-center gap-2">
+      <a
+        href={href}
+        aria-label={QUOTE_ARIA}
+        className="inline-flex items-center gap-2"
+      >
         <span className="font-medium text-[16px] text-white">{QUOTE_TEXT}</span>
         <ArrowRight className="w-6 h-6 text-white" />
       </a>
