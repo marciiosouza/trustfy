@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT } from "@/components/ui/QuoteButton";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
@@ -63,7 +63,7 @@ export const IntegrationPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
-            <Button asChild>
+            <QuoteButton asChild>
               <motion.button
                 className="relative w-full h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                 style={{
@@ -74,11 +74,11 @@ export const IntegrationPage = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <span className=" font-medium text-[16px] text-white">
-                  Fazer orçamento
+                  {QUOTE_TEXT}
                 </span>
                 <ArrowRight className="w-6 h-6 text-white" />
               </motion.button>
-            </Button>
+            </QuoteButton>
           </motion.div>
         </div>
 
@@ -175,7 +175,7 @@ export const IntegrationPage = () => {
               transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
               className="flex justify-end "
             >
-              <Button asChild>
+              <QuoteButton asChild>
                 <motion.button
                   className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                   style={{
@@ -186,11 +186,11 @@ export const IntegrationPage = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
                   <span className=" font-medium text-[16px] text-white">
-                    Fazer orçamento
+                    {QUOTE_TEXT}
                   </span>
                   <ArrowRight className="w-6 h-6 text-white" />
                 </motion.button>
-              </Button>
+              </QuoteButton>
             </motion.div>
           </motion.div>
         </div>

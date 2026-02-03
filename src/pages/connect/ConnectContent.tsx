@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT } from "@/components/ui/QuoteButton";
 import { ArrowRight } from "lucide-react";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { CONNECT_CONTENT } from "./constants";
@@ -51,7 +51,7 @@ export const ConnectContent = memo(
           whileTap={{ scale: 0.98 }}
           className={isMobile ? "w-full mx-[-6]" : ""}
         >
-          <Button asChild>
+          <QuoteButton asChild>
             <motion.button
               className="relative w-full md:w-[319px] h-[56px] md:h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
               style={{
@@ -62,11 +62,11 @@ export const ConnectContent = memo(
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <span className=" font-medium text-[16px] text-white">
-                Fazer orçamento
+                {QUOTE_TEXT}
               </span>
               <ArrowRight className="w-6 h-6 text-white" />
             </motion.button>
-          </Button>
+          </QuoteButton>
         </motion.div>
       </div>
     );

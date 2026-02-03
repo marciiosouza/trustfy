@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { QUOTE_TEXT, QUOTE_ARIA } from "@/components/ui/QuoteButton";
 
 export interface TechFeature {
   id: string;
@@ -18,7 +19,7 @@ export const TECH_CONTENT = {
       "Unimos infraestrutura bancária, personalização visual e segurança máxima. Tenha todas as ferramentas necessárias para operar seu Gateway com a potência dos grandes players.",
   },
   cta: {
-    text: "Fazer orçamento",
-    ariaLabel: "Fazer um orçamento para sua Fintech",
+    text: QUOTE_TEXT,
+    ariaLabel: QUOTE_ARIA,
   },
 } as const;

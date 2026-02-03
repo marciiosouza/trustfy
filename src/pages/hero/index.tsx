@@ -1,5 +1,7 @@
 import { BrandsStrip } from "./BrandsStrip";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { QUOTE_TEXT } from "@/components/ui/QuoteButton";
+import QuoteButton from "@/components/ui/QuoteButton";
 import { Button } from "@/components/ui/button";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -228,7 +230,7 @@ export const HeroPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button asChild>
+            <QuoteButton asChild>
               <motion.button
                 className="relative w-[210.81px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                 style={{
@@ -239,11 +241,11 @@ export const HeroPage = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <span className="font-medium text-[16px] text-white">
-                  Fazer orçamento
+                  {QUOTE_TEXT}
                 </span>
                 <ArrowRight className="w-6 h-6 text-white" />
               </motion.button>
-            </Button>
+            </QuoteButton>
             <Button asChild>
               <motion.button
                 className="relative w-[161.63px] h-[60px] border-0 bg-black rounded-[8px] flex items-center justify-center gap-2 group hover:bg-black/90 transition-colors"
@@ -388,7 +390,7 @@ export const HeroPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button asChild>
+            <QuoteButton asChild>
               <motion.button
                 className="w-full h-[56px] bg-[#7861FF] rounded-[8px] flex items-center justify-center gap-2"
                 style={{
@@ -399,11 +401,11 @@ export const HeroPage = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <span className="font-medium text-[16px] text-white">
-                  Fazer orçamento
+                  {QUOTE_TEXT}
                 </span>
                 <ArrowRight className="w-6 h-6 text-white" />
               </motion.button>
-            </Button>
+            </QuoteButton>
             <Button asChild>
               <motion.button
                 className="w-full h-[56px] border-0 bg-black rounded-[8px] flex items-center justify-center gap-2"

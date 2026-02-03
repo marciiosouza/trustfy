@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT } from "@/components/ui/QuoteButton";
 import { motion } from "framer-motion";
 import FeaturesList from "./FeaturesList";
 import { ArrowRight } from "lucide-react";
@@ -53,16 +53,16 @@ export const PaymentsPage = () => {
           <FeaturesList />
 
           <div className="mt-6 md:mt-10 w-full lg:max-w-[280px]">
-            <Button variant="hero-primary" size="hero" asChild>
+            <QuoteButton variant="hero-primary" size="hero" asChild>
               <motion.button
                 className="flex items-center justify-center gap-2 text-white w-full lg:w-[280px]"
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Fazer orçamento
+                {QUOTE_TEXT}
                 <ArrowRight className="shrink-0 size-6" />
               </motion.button>
-            </Button>
+            </QuoteButton>
           </div>
         </motion.div>
 

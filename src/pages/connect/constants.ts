@@ -80,10 +80,12 @@ export const ARCS_CONFIG: ArcConfig[] = [
   { radius: 444.5, strokeWidth: 1, opacity: 1 },
 ];
 
+import { QUOTE_TEXT, QUOTE_LINK } from "@/components/ui/QuoteButton";
+
 export const CONNECT_CONTENT = {
   title: "Conectividade Total",
   description:
     "Acesso nativo a uma rede com +XX players de processamento, direto no seu painel de gestão.",
-  ctaText: "Fazer orçamento",
-  ctaLink: "#orcamento",
+  ctaText: QUOTE_TEXT,
+  ctaLink: QUOTE_LINK,
 } as const;

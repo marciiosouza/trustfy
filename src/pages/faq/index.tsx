@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT } from "@/components/ui/QuoteButton";
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -287,7 +287,7 @@ export const FaqPage = () => {
             }}
             className="flex justify-center mt-14"
           >
-            <Button asChild>
+            <QuoteButton asChild>
               <motion.button
                 className="relative w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
                 style={{
@@ -298,11 +298,11 @@ export const FaqPage = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <span className=" font-medium text-[16px] text-white">
-                  Fazer orçamento
+                  {QUOTE_TEXT}
                 </span>
                 <ArrowRight className="w-6 h-6 text-white" />
               </motion.button>
-            </Button>
+            </QuoteButton>
           </motion.div>
         </div>
       </div>

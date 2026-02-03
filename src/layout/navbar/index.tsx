@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT, QUOTE_LINK } from "@/components/ui/QuoteButton";
 import { Menu, X } from "lucide-react";
 import whatsapp from "/public/whatsapp.svg";
 
@@ -39,17 +40,20 @@ export const Navbar = () => {
           </ul>
 
           <div className="hidden md:flex md:items-center">
-            <Button
+            <QuoteButton
               variant="outline"
+              href={QUOTE_LINK}
               className="flex items-center justify-center bg-[rgba(96,77,209,0.05)] border border-[rgba(120,97,255,0.5)] rounded-[8px] text-[#7861FF] hover:bg-[rgba(120,97,255,0.1)] hover:text-[#7861FF] font-[700] text-[14px] h-[44.8px] px-4"
             >
-              <img
-                src={whatsapp}
-                alt="Ícone de orçamento"
-                className="h-4 w-4"
-              />
-              Fazer orçamento
-            </Button>
+              <a className="inline-flex items-center">
+                <img
+                  src={whatsapp}
+                  alt="Ícone de orçamento"
+                  className="h-4 w-4"
+                />
+                {QUOTE_TEXT}
+              </a>
+            </QuoteButton>
           </div>
 
           {/* Right: Actions */}
@@ -98,17 +102,20 @@ export const Navbar = () => {
                 FAQ
               </li>
               <div className="px-4 py-3">
-                <Button
+                <QuoteButton
                   size="sm"
+                  href={QUOTE_LINK}
                   className="flex items-center justify-center w-full bg-[rgba(120,97,255,0.05)] hover:bg-[rgba(120,97,255,0.05)] border border-[rgba(120,97,255,0.5)] hover:border-[rgba(120,97,255,0.5)] rounded-[8px] text-[#7861FF] h-[44.8px] font-bold text-[14px] leading-[17px] tracking-[-0.28px]"
                 >
-                  <img
-                    src={whatsapp}
-                    alt="Ícone de orçamento"
-                    className="h-4 w-4 mr-2"
-                  />
-                  Fazer orçamento
-                </Button>
+                  <a className="inline-flex items-center">
+                    <img
+                      src={whatsapp}
+                      alt="Ícone de orçamento"
+                      className="h-4 w-4 mr-2"
+                    />
+                    {QUOTE_TEXT}
+                  </a>
+                </QuoteButton>
               </div>
             </ul>
           </div>

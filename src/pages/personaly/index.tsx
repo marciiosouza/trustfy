@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import QuoteButton, { QUOTE_TEXT } from "@/components/ui/QuoteButton";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -149,7 +149,7 @@ export const PersonalyPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button asChild>
+          <QuoteButton asChild>
             <motion.button
               className="relative w-full md:w-[319px] h-[60px] bg-[#7861FF] rounded-[8px] flex items-center justify-center group transition-all"
               style={{
@@ -160,11 +160,11 @@ export const PersonalyPage = () => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <span className=" font-medium text-[16px] text-white">
-                Fazer orçamento
+                {QUOTE_TEXT}
               </span>
               <ArrowRight className="w-6 h-6 text-white" />
             </motion.button>
-          </Button>
+          </QuoteButton>
         </motion.div>
       </div>
 
